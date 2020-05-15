@@ -132,30 +132,14 @@ const makeEditMoodForm = (o) => {
 			</div>
 
 			<div class="choose-bg">
-				<div class="bg-colors">
-					<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-1{fill:#f36e54;}</style></defs><circle class="cls-1" cx="20" cy="20" r="20"/></svg>
-				</div>
-				<div class="bg-colors">
-					<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-2{fill:#e889b9;}</style></defs><circle class="cls-2" cx="20" cy="20" r="20"/></svg>
-				</div>
-				<div class="bg-colors">
-					<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-3{fill:#f8d26c;}</style></defs><circle class="cls-3" cx="20" cy="20" r="20"/></svg>
-				</div>
-				<div class="bg-colors">
-					<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-4{fill:#bbd534;}</style></defs><circle class="cls-4" cx="20" cy="20" r="20"/></svg>
-				</div>
-				<div class="bg-colors">
-					<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-5{fill:#5486c5;}</style></defs><circle class="cls-5" cx="20" cy="20" r="20"/></svg>
-				</div>
-				<div class="bg-colors">
-					<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-6{fill:#9d80bb;}</style></defs><circle class="cls-6" cx="20" cy="20" r="20"/></svg>
-				</div>
-				<div class="bg-colors">
-					<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-7{fill:#223f7b;}</style></defs><circle class="cls-7" cx="20" cy="20" r="20"/></svg>
-				</div>
-				<div class="bg-colors">
-					<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><defs><style>.cls-8{fill:#37ba9a;}</style></defs><circle class="cls-8" cx="20" cy="20" r="20"/></svg>
-				</div>
+				<div class="bg-color" style="background-color: #F36E54;" data-color="#F36E54"></div>
+				<div class="bg-color" style="background-color: #E889B9;" data-color="#E889B9"></div>
+				<div class="bg-color" style="background-color: #F8D26C;" data-color="#F8D26C"></div>
+				<div class="bg-color" style="background-color: #BBD534;" data-color="#BBD534"></div>
+				<div class="bg-color" style="background-color: #5486C5;" data-color="#5486C5"></div>
+				<div class="bg-color" style="background-color: #9D80BB;" data-color="#9D80BB"></div>
+				<div class="bg-color" style="background-color: #223F7B;" data-color="#223F7B"></div>
+				<div class="bg-color" style="background-color: #37BA9A;" data-color="#37BA9A"></div>
 			</div>
 
 			<div class="form-control">
