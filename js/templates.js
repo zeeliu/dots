@@ -35,25 +35,7 @@ const makeUserProfile = templater (o=>`
 
 	`);
 
-const makeMoodImage = templater(o=>`
 
-			<img class="face" src="${o.img}" alt="">
-			<img class="bgc" src="${o.bgc}" alt="">
-
-`);
-
-
-const makeMoodProfile = templater(o=>`
-
-		<div class="profile-body">
-
-			<div class="profile-name">${o.name}</div>
-
-			<div class="profile-description">
-				<div>Description<span>${o.description}</span></div>
-			</div>
-
-`);
 
 const makeMoodImage = templater(
 	(o) => `
