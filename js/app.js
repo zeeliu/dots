@@ -115,6 +115,7 @@ $(()=>{
 
 	// https://codepen.io/bronkula/pen/yPBbWY
 
+<<<<<<< Updated upstream
 	$("[name='choose-color']").on("click",function(){
 	  // To find the color, you need to find the selected element
 	  var bg = $("[name='choose-color']:checked").val();
@@ -122,6 +123,12 @@ $(()=>{
 	  // Once the color is gotten, use it however necessary
 	  $(".bgc").css({'background-color':bg}).html(bg);
 	})
+=======
+		.on("click", ".bg-color", function(e) {
+			const color = $(this).attr('data-color')
+			$(".img").css({ "background-color": color }).html();
+		})
+>>>>>>> Stashed changes
 
 
 	.on("click",".js-addlocation",function(e) {

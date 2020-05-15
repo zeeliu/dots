@@ -1,12 +1,22 @@
 
 //templater (f=>{}) ([{},{}])
 
+<<<<<<< Updated upstream
 const makeMoodList = templater (o=>`
 		<li><a href="#mood-page" class="mood-jump" data-id="${o.id}">
 					<img src="${o.img}">
 					</a></li>
 					
 	`);
+=======
+const makeMoodList = templater(
+	(o) => `
+		<li class="mood-jump" data-id="${o.id}">
+			<img src="${o.img}" style="background-color: ${o.bgc}">
+		</li>
+	`
+);
+>>>>>>> Stashed changes
 
 const makeChooseMoodList = templater (o=>`
 		<li><a href="#addlocation-page" class="mood-jump" data-id="${o.id}">
@@ -24,6 +34,7 @@ const makeUserProfile = templater (o=>`
 				<img src="${o.img}" alt="">
 			</div>
 		</div>
+<<<<<<< Updated upstream
 				<h1>${o.name}</h1>
 				<P>${o.gender}</P>
 				<p>${o.city}</p>
@@ -57,13 +68,59 @@ const makeMoodProfile = templater(o=>`
 					<div class="secondary-button">
 							<a href="#moodedit-page" data-id="${o.id}">Edit mood</a>
 					</div>
+=======
+		<h1>${o.name}</h1>
+		<P>${o.gender}</P>
+		<p>${o.city}</p>
+		<p>${o.bio}</p>
+	`
+);
+
+const makeMoodImage = templater(
+	(o) => `
+		<img class="face" src="${o.img}" alt="">
+		<h1 class="profile-name">${o.name}</h1>
+		<div class="bgc" style="background-color: ${o.bgc}"> </div>
+	`
+);
+
+
+const makeMoodProfile = templater(
+	(o) => `
+		<div class="profile-body">
+			
+			<div class="profile-description" style="border-bottom-color: ${o.bgc}">
+				<div><span>${o.description}</span></div>
+			</div>
+			
+	
+		</div>
+	`
+);
+
+const makeButtonGroup = templater(
+	(o) => `
+		<div class="profile-body">
+			
+				<div class="cta-button">
+					<a href="#addlocation-page">Make a dot</a>
+				</div>
+				<div class="secondary-button">
+					<a href="#moodedit-page" data-id="${o.id}">Edit mood</a>
+>>>>>>> Stashed changes
 				</div>
 		</div>
 
+<<<<<<< Updated upstream
 `);
 
 const makeLocationProfile = templater(o=>`
 
+=======
+
+const makeLocationProfile = templater(
+	(o) => `
+>>>>>>> Stashed changes
 		<div class="profile-body">
 
 			<div class="profile-name">${o.name}</div>
