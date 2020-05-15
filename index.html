@@ -23,6 +23,7 @@
     async defer></script>
 
 	<link rel="stylesheet" href="https://use.typekit.net/swu1lku.css">
+	<script src="https://kit.fontawesome.com/03e9bd2674.js" crossorigin="anonymous"></script>
 
 
 
@@ -209,21 +210,25 @@
 	<section data-role="page" id="mood-page">
 
 
-		<header data-role="header" class="ui-header ui-bar-inherit">
-			<ul>
-				<li class="flex-none">
-					<a href="#" data-rel="back">back</a>
-				</li>
-				<li class="flex-stretch"></li>
-				<li class="flex-none">
-					
-				</li>
-			</ul>
-		</header>
 
 			
 		<div data-role="main">
 			<div class="scrollable">
+
+
+
+				<div class="icon back">
+					<a href="#" data-rel="back">
+						<i class="fas fa-chevron-left"></i>
+					</a>
+				</div>
+
+				<div class="icon delete">
+					<i class="fas fa-trash-alt"></i>
+				</div>
+
+
+
 
 				<div class="profile-image"></div>
 
@@ -243,6 +248,9 @@
 						<div class="map"></div>
 					</div>
 				</div>
+
+
+
 	
 	
 			</div>
@@ -260,18 +268,14 @@
 
 		<section data-role="page" id="addmood-page">
 
-				<header data-role="header" class="ui-header ui-bar-inherit">
-					<h1 class="ui-title">Add Mood</h1>
-					<ul>
-						<li class="flex-none">
-							<a href="#list-page">cancel</a>
-						</li>
-						<li class="flex-stretch title"></li>
-						<li class="flex-none"></li>
-					</ul>
-				</header>
 
 				<div data-role="main">
+
+					<div class="icon back">
+						<a href="#" data-rel="back">
+							<i class="fas fa-chevron-left"></i>
+						</a>
+					</div>
 
 					<img src="img/dots/graphics/mood-10.svg">
 
@@ -300,80 +304,57 @@
 
 			<section data-role="page" id="moodedit-page">
 
-				<header data-role="header" class="ui-header ui-bar-inherit">
-					<ul>
-						<li class="flex-none">
-							<a href="#" data-rel="back">back</a>
-						</li>
-						<li class="flex-stretch"></li>
-						<li class="flex-none">
-						</li>
-					</ul>
-				</header>
-
 				<div data-role="main">
 
+					<div class="icon back">
+						<a href="#" data-rel="back">
+							<i class="fas fa-chevron-left"></i>
+						</a>
+					</div>
+
 					<img src="img/dots/graphics/mood-10.svg">
+					<div class="bgc"></div>
 
 
-					<div class="edit-form"></div>
+					<div class="edit-form">
+						
+					</div>
+
+					<form>
+						<div class="control-group">
+						    <input type="radio" id="color_orange" name="choose-color" class="hidden control-color-input" value="">
+						    <label for="color_orange" class="control-color-label" data-color="#F36E54"></label>
+
+						    <input type="radio" id="color_pink" name="choose-color" class="hidden control-color-input" value="#E889B9">
+						    <label for="color_pink" class="control-color-label" data-color="#E889B9"></label>
+
+						    <input type="radio" id="color_yellow" name="choose-color" class="hidden control-color-input" value="#F8D26C">
+						    <label for="color_yellow" class="control-color-label" data-color="#F8D26C"></label>
+
+						    <input type="radio" id="color_green_light" name="choose-color" class="hidden control-color-input" value="#BBD534">
+						    <label for="color_green_light" class="control-color-label" data-color="#BBD534"></label>
+
+						    <input type="radio" id="color_blue_light" name="choose-color" class="hidden control-color-input" value="#5486C5">
+						    <label for="color_blue_light" class="control-color-label" data-color="#5486C5"></label>
+
+						    <input type="radio" id="color_purple" name="choose-color" class="hidden control-color-input" value="#E889B9">
+						    <label for="color_purple" class="control-color-label" data-color="#E889B9"></label>
+
+						    <input type="radio" id="color_blue_dark" name="choose-color" class="hidden control-color-input" value="#223F7B">
+						    <label for="color_blue_dark" class="control-color-label" data-color="#223F7B"></label>
+
+						    <input type="radio" id="color_green_dark" name="choose-color" class="hidden control-color-input" value="#37BA9A">
+						    <label for="color_green_dark" class="control-color-label" data-color="#37BA9A"></label>
+						</div>
+					</form>
 
 					<div class="cta-button">
 							<a href="#" data-rel="back" class="js-edit-mood">Done</a>
 					</div>
-					
+
 				</div>
 
 			</section>
-
-
-
-
-	<!-- Dot page -->
-
-					<section data-role="page" id="dot-page">
-
-						<header data-role="header" class="ui-header ui-bar-inherit">
-							<ul>
-								<li class="flex-none">
-									<a href="#" data-rel="back">back</a>
-								</li>
-								<li class="flex-stretch"></li>
-								<li class="flex-none">
-									<a href="#">Delete</a>
-								</li>
-							</ul>
-						</header>
-
-							
-						<div data-role="main">
-							<div class="scrollable">
-
-								<!--<div class="profile-image"></div>
-
-								<nav class="profile-nav nav-tabs">
-
-									<ul class="display-flex">
-										<li  class="active"><a href="#">Description</a></li>
-										<li><a href="#">Locations</a></li>			
-									</ul>
-									
-								</nav>
-
-								<div class="profile-bottom">-->
-									<div class="profile-content active"></div>
-								
-									<div class="profile-map">
-										<div class="map"></div>
-									</div>
-								</div>
-					
-					
-							</div>
-						</div>
-
-					</section>
-
 
 
 
@@ -394,27 +375,32 @@
 						</header>
 
 						<div data-role="main">
+							<div class="card">			
+								<form class="form-control">
 
-							<form>
+									<label class="form-label" for="description">Description</label>
+									<input class="form-input-box" type="text" placeholder="Say Something I'm giving up on you &#127925;" data-role="none">
 
-								<label for="description">Description</label>
-								<input type="text" placeholder="Mood Name" data-role="none">
+									<!--
+									<label for="favorite">Favorite</label>
+									<input type="checkbox" name="favorite" id="list-add-favorite">
 
-								<label for="favorite">Favorite</label>
-								<input type="checkbox" name="favorite" id="list-add-favorite">
+										<label class="form-label" for="list-add-degree">Degree</label>
+										<select class="form-button" id="list-add-degree" data-role="none">
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+										</select>
+									-->
+									
+									<div class="cta-button js-addlocation" >
+										<a href="#">Make</a>
+									</div>
 
-									<label class="form-label" for="list-add-degree">Degree</label>
-									<select class="form-button" id="list-add-degree" data-role="none">
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-									</select>
-
-			
-
-							</form>
+								</form>
+							</div>
 
 							<input type="hidden" id="add-location-lat" name="">
 							<input type="hidden" id="add-location-lng" name="">

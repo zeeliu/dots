@@ -33,7 +33,8 @@ const makeUserProfile = templater (o=>`
 
 const makeMoodImage = templater(o=>`
 
-			<img src="${o.img}" alt="">
+			<img class="face" src="${o.img}" alt="">
+			<img class="bgc" src="${o.bgc}" alt="">
 
 `);
 
@@ -45,19 +46,18 @@ const makeMoodProfile = templater(o=>`
 			<div class="profile-name">${o.name}</div>
 
 			<div class="profile-description">
-				<div><strong>Description</strong> <span>${o.description}</span></div>
+				<div>Description<span>${o.description}</span></div>
 			</div>
 
-			<div class="cta-button">
-					<a href="#addlocation-page">Make a dot</a>
-			</div>
-			<div class="secondary-button">
-					<a href="#moodedit-page" data-id="${o.id}">Edit mood</a>
-			</div>
+			<div class="button-group">
 
-			<div>
-				<a href="#" class="js-delete-mood" data-id="${o.id}">Delete</a></div>
-			</div>
+					<div class="cta-button">
+						<a href="#addlocation-page">Make a dot</a>
+					</div>
+					<div class="secondary-button">
+							<a href="#moodedit-page" data-id="${o.id}">Edit mood</a>
+					</div>
+				</div>
 		</div>
 
 `);
@@ -97,9 +97,6 @@ const makeHomeWindow = templater(o=>`
 				<h2>${o.name}</h2>
 				<div><strong>Description</strong> <span>${o.description}</span></div>
 				<div><strong>Favorite</strong> <span>${o.favorite}</span></div>
-				<div>
-					<a href="#dot-page" class="form-button location-button" data-id="${o.mid}">Visit Dot</a>
-				</div>
 			</div>
 		</div>
 `);
@@ -148,7 +145,7 @@ return `
 
 		<div class="form-control">
 			<label for="name">Name</label>
-			<input type="text" placeholder="Mood Name" id="edit-mood-name" data-role="none" value="${o.name}">
+			<input type="text" class="form-input" placeholder="Mood Name" id="edit-mood-name" data-role="none" value="${o.name}">
 		</div>
 
 		<div class="choose-bg">

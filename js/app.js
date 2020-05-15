@@ -36,9 +36,6 @@ $(()=>{
 			case "moodedit-page":
 				showMoodEditPage();
 			break;
-			case "dot-page":
-				showDotPage();
-			break;
 
 			
 		}
@@ -115,6 +112,18 @@ $(()=>{
 
 	/* CLICKS */
 
+
+	// https://codepen.io/bronkula/pen/yPBbWY
+
+	$("[name='choose-color']").on("click",function(){
+	  // To find the color, you need to find the selected element
+	  var bg = $("[name='choose-color']:checked").val();
+	  console.log(bg)
+	  // Once the color is gotten, use it however necessary
+	  $(".bgc").css({'background-color':bg}).html(bg);
+	})
+
+
 	.on("click",".js-addlocation",function(e) {
 		query({
 			type:'insert_location',
@@ -123,10 +132,13 @@ $(()=>{
 				$("#add-location-lat").val(),
 				$("#add-location-lng").val(),
 				$("#add-location-description").val()
+
 			]
 		}).then(d=>{
 			if(d.error) throw d.error;
+			$.mobile.navigate("#home-page");
 		})
+
 	})
 
 	.on("click",".js-edit-user",function(e) {

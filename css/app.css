@@ -17,6 +17,10 @@
     --color-green-light: #BBD534;
     --color-green-medium: #8BC04F;
 
+    --color-blue-light: #5486C5;
+    --color-blue-dark: #223F7B;
+
+
 
 	--header-height:3rem;
 	--footer-height:3.75rem;
@@ -43,6 +47,10 @@ a {
 	text-decoration:none;
 }
 
+button {
+	font-family: inherit;
+
+}
 
 
 
@@ -196,15 +204,70 @@ footer .profile .active {
 }
 
 
+.hidden {
+	display: none;
+}
+
+
+
+
+/*ICONS*/
+
+.icon {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+/*--adjust as necessary--*/
+    color: #000;
+    font-size: 1.6em;
+    position: absolute;
+    color: white;
+    opacity: 50%
+    z-index: 2;
+    position: absolute;
+}
+
+.back {
+	content:"\f053";
+	top: 0.8em;
+    left: 0.8em;
+    opacity: 95%;
+}
+
+.delete {
+	content:"\f014";
+	top: 0.8em;
+    right: 0.8em;
+}
+
+
+.button-group {
+	z-index: 2;
+	position: absolute;
+	width: 100%;
+}
+
+
+
+
+
 /* FORMS */
 .form-control {
-    margin: 1em 0;
+    margin: auto;
+    width: 90%;
 }
 .ui-mobile .form-label {
     font-size: 0.8em;
     color: var(--color-yellow-medium);
     margin: 0.5em 0;
 }
+
+label {
+	font-weight: bold;
+	color: var(--color-blue-dark);
+}
+
 .form-input {
     display: block;
     width: 100%;
@@ -216,9 +279,29 @@ footer .profile .active {
     outline: 0;
     font-size:inherit;
 }
+
+
+.form-input-box {
+    display: block;
+    width: 100%;
+    height: 100px;
+    border-width: 0;
+    border-radius: 25px;
+    background-color: transparent;
+    padding: 0.5em 1em;
+    border: 1px solid var(--color-yellow-light);
+    outline: 0;
+    font-size:inherit;
+}
+
 .form-input:focus {
 	border-bottom-color:var(--color-orange-light);
 }
+
+.form-input-box:focus {
+	border-color: var(--color-orange-light);
+}
+
 .form-button {
     display: block;
     width: 100%;
@@ -313,7 +396,20 @@ footer .profile .active {
     text-align: center;
     background-color: var(--color-orange-light);
     outline: 0;
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3);
+}
+
+.secondary-button {
+	margin: 0.5em auto;
+    display: block;
+    width: 80%;
+    border-width: 0;
+    padding: 1em;
+    border-radius: 0.5em;
+    color: var(--color-orange-light);
+    text-align: center;
+    background-color: white;
+    border: 1px solid var(--color-orange-light);
+    outline: 0;
 }
 
 #home-page .circle {
@@ -412,21 +508,94 @@ footer .profile .active {
 
 
 /*ADD LOCATION PAGE*/
-#addlocation-page form {
-	z-index: 4;
-    position: absolute;
+
+#addlocation-page .form-control {
+	width: 90%;
+	margin: auto;
+	margin-top: 10%;
+	margin-bottom: 10%;
 }
 
+
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  	width: 98%;
+  	bottom: 0;
+  	position: absolute;
+    z-index: 2;
+    background-color: white;
+    margin: auto;
+    border-radius: 15px 15px 0 0;
+}
+
+
+button {
+  color:white;
+  border-width:0;
+  background-color:#999;
+}
+
+
+/*COLOR PALETTE SELECTION*/
+
+/* Design a label to look however you want */
+
+.control-group {
+	display: flex;
+}
+
+.control-color-label {
+  font-size:2em;
+  display:inline-block;
+  width:1em;
+  height:1em;
+  border-radius:50%;
+  position:relative;
+  padding: 0;
+  margin: 0; 
+}
+
+/* Here we use a pseudo :after to add a symbol to the label */
+.control-color-label:after {
+  content:"×";
+  color:white;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:0.8em;
+  display:none;
+}
+.control-color-label[data-color=#F36E54] {
+  background-color: #F36E54;
+}
+.control-color-label[data-color=green] {
+  background-color:green;
+}
+.control-color-label[data-color=blue] {
+  background-color:blue;
+}
+
+.control-color-input:checked+.control-color-label {
+  border-radius:0;
+}
+.control-color-input:checked+.control-color-label:after {
+  display:block;
+}
+
+.bgc {
+	width: 100%;
+	height: 20vh;
+	top: 0;
+	position: absolute;
+}
 
 
 /*MOOD PROFILE & EDIT & ADD PAGE*/
 #mood-page form input, #moodedit-page form input, #addmood-page form input {
 	display: block;
 	margin: 0;
-}
-
-#mood-page [data-role='main'], #moodedit-page [data-role='main'],#addmood-page [data-role='main'] {
-	text-align: center;
 }
 
 #mood-page .cta-button, #moodedit-page .cta-button {
@@ -439,12 +608,11 @@ footer .profile .active {
 }
 
 .profile-bottom {
-	height: 100%;
+	height: 20vh;
 }
 
 .profile-content,
 .profile-map {
-    height:100%;
     position:relative;
     display:none;
 }
