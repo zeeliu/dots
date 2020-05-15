@@ -11,7 +11,7 @@ const makeMoodList = templater (o=>`
 const makeChooseMoodList = templater (o=>`
 		<li><a href="#addlocation-page" class="mood-jump" data-id="${o.id}">
 					<img src="${o.img}">
-					</a></li>
+		</a></li>
 					
 	`);
 
@@ -80,7 +80,7 @@ const makeLocationProfile = templater(o=>`
 			</div>
 
 			<div>
-				<a href="#" class="js-delete-mood" data-id="${o.id}">Delete</a></div>
+				<a href="#" class="js-delete-mood" data-id="${o.id}">Delete</a>
 			</div>
 		</div>
 
