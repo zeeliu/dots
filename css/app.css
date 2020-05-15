@@ -208,10 +208,7 @@ footer .profile .active {
 	display: none;
 }
 
-<<<<<<< Updated upstream
 
-
-=======
 .profile-description {
 	width: 80%;
     margin: auto;
@@ -220,7 +217,7 @@ footer .profile .active {
     padding: 1em;
     border-bottom: 2px solid;
 }
->>>>>>> Stashed changes
+
 
 /*ICONS*/
 
@@ -234,13 +231,8 @@ footer .profile .active {
     font-size: 1.6em;
     position: absolute;
     color: white;
-<<<<<<< Updated upstream
-    opacity: 50%
-    z-index: 2;
-=======
     opacity: 50%;
     z-index: 5;
->>>>>>> Stashed changes
     position: absolute;
 }
 
