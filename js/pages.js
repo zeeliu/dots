@@ -99,55 +99,6 @@ const showMoodPage = async () => {
 }
 
 
-const showDotPage = async () => {
-	if(sessionStorage.locationId===undefined) {
-		throw("No location id defined");
-	}
-
-
-
-	query({
-		type:'location_by_id',
-		params:[sessionStorage.locationId]
-	}).then(d=>{
-
-	console.log(d);
-
-	$("#dot-page .profile-image")
-		.html(makeMoodImage(d.result));
-
-	});
-
-	query({
-		type:'location_by_id',
-		params:[sessionStorage.locationId]
-	}).then(d=>{
-
-	console.log(d);
-
-	$("#dot-page .profile-content")
-		.html(makeLocationProfile(d.result));
-
-	});
-
-
-	query({
-		type:'location_by_id',
-		params:[sessionStorage.moodId]
-	}).then(async d=>{
-			let map_el = await makeMap("#dot-page .map");
-
-			console.log(d);
-
-			makeMarkers(
-				map_el,
-				d.result
-
-				);
-		});
-
-}
-
 
 const showHomePage = async () => {
 	let d = await query({
