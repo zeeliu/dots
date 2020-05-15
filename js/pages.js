@@ -82,16 +82,10 @@ const showMoodPage = async () => {
 		params:[sessionStorage.moodId]
 	}).then(d=>{
 		console.log(d);
-<<<<<<< Updated upstream
-		$("#mood-page .profile-image")
-			.html(makeMoodImage(d.result));
-		$("#mood-page .profile-content")
-			.html(makeMoodProfile(d.result));
-=======
 		$("#mood-page .profile-image").html(makeMoodImage(d.result));		
 		$("#mood-page .profile-content").html(makeMoodProfile(d.result));
 		$("#mood-page .button-group").html(makeButtonGroup(d.result));
->>>>>>> Stashed changes
+
 	});
 
 	query({
@@ -113,18 +107,11 @@ const showHomePage = async () => {
 	});
 
 	console.log(d);
-
-<<<<<<< Updated upstream
 	let moods = 
 		d.result.reduce((r,o)=>{
 		 o.icon = `img/dots/icons/${o.name}.svg`;
 		if(o.lat) r.push(o);
-=======
-	let moods = d.result.reduce((r, o) => {
-		o.icon = `<div class="bg-color" style="background-color: ${o.bgc}"></div>`;
-		if (o.lat) r.push(o);
->>>>>>> Stashed changes
-		return r;
+
 	},[]);
 		console.log(moods);
 
@@ -171,14 +158,7 @@ const showMoodEditPage = async () => {
 	$("#moodedit-page .edit-form")
 		.html(makeEditMoodForm(d.result[0]))
 	$("#moodedit-page img")
-<<<<<<< Updated upstream
-		.attr('src', d.result[0].img)
-		.css('background', d.result[0].color)
-}
 
-
-=======
 		.attr("src", d.result[0].img)
 		.css("background", d.result[0].bgc);
 };
->>>>>>> Stashed changes

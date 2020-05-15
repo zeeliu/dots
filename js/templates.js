@@ -1,14 +1,7 @@
 
 //templater (f=>{}) ([{},{}])
 
-<<<<<<< Updated upstream
-const makeMoodList = templater (o=>`
-		<li><a href="#mood-page" class="mood-jump" data-id="${o.id}">
-					<img src="${o.img}">
-					</a></li>
-					
-	`);
-=======
+
 const makeMoodList = templater(
 	(o) => `
 		<li class="mood-jump" data-id="${o.id}">
@@ -16,7 +9,7 @@ const makeMoodList = templater(
 		</li>
 	`
 );
->>>>>>> Stashed changes
+
 
 const makeChooseMoodList = templater (o=>`
 		<li><a href="#addlocation-page" class="mood-jump" data-id="${o.id}">
@@ -34,7 +27,7 @@ const makeUserProfile = templater (o=>`
 				<img src="${o.img}" alt="">
 			</div>
 		</div>
-<<<<<<< Updated upstream
+
 				<h1>${o.name}</h1>
 				<P>${o.gender}</P>
 				<p>${o.city}</p>
@@ -60,21 +53,7 @@ const makeMoodProfile = templater(o=>`
 				<div>Description<span>${o.description}</span></div>
 			</div>
 
-			<div class="button-group">
-
-					<div class="cta-button">
-						<a href="#addlocation-page">Make a dot</a>
-					</div>
-					<div class="secondary-button">
-							<a href="#moodedit-page" data-id="${o.id}">Edit mood</a>
-					</div>
-=======
-		<h1>${o.name}</h1>
-		<P>${o.gender}</P>
-		<p>${o.city}</p>
-		<p>${o.bio}</p>
-	`
-);
+`);
 
 const makeMoodImage = templater(
 	(o) => `
@@ -100,27 +79,24 @@ const makeMoodProfile = templater(
 
 const makeButtonGroup = templater(
 	(o) => `
-		<div class="profile-body">
 			
 				<div class="cta-button">
 					<a href="#addlocation-page">Make a dot</a>
 				</div>
 				<div class="secondary-button">
 					<a href="#moodedit-page" data-id="${o.id}">Edit mood</a>
->>>>>>> Stashed changes
-				</div>
-		</div>
 
-<<<<<<< Updated upstream
+				</div>
+
+
+
 `);
 
-const makeLocationProfile = templater(o=>`
 
-=======
 
 const makeLocationProfile = templater(
 	(o) => `
->>>>>>> Stashed changes
+
 		<div class="profile-body">
 
 			<div class="profile-name">${o.name}</div>

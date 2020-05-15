@@ -215,7 +215,7 @@
 
 
 			
-		<div data-role="main">
+		
 			<div class="scrollable">
 
 
@@ -226,30 +226,31 @@
 					</a>
 				</div>
 
-				<div class="icon delete">
+				<div class="icon delete js-delete-mood">
 					<i class="fas fa-trash-alt"></i>
 				</div>
 
 
-
-
 				<div class="profile-image"></div>
 
-				<nav class="profile-nav nav-tabs">
 
-					<ul class="display-flex">
-						<li  class="active"><a href="#">Description</a></li>
-						<li><a href="#">Locations</a></li>			
-					</ul>
+				<div data-role="main">
+
+					<nav class="profile-nav nav-tabs">
+
+						<ul class="display-flex">
+							<li  class="active"><a href="#">Description</a></li>
+							<li><a href="#">Locations</a></li>			
+						</ul>
+						
+					</nav>
+
+					<div class="profile-bottom">
+						<div class="profile-content active"></div>
 					
-				</nav>
-
-				<div class="profile-bottom">
-					<div class="profile-content active"></div>
-				
-					<div class="profile-map">
-						<div class="map"></div>
-					</div>
+						<div class="profile-map">
+							<div class="map"></div>
+						</div>
 				</div>
 
 
@@ -265,7 +266,7 @@
 
 
 
-<<<<<<< Updated upstream
+
 
 
 		<!-- Add mood page -->
@@ -275,18 +276,18 @@
 
 				<div data-role="main">
 
-=======
+
 		<section data-role="page" id="mood-page">
 			
 			<div class="scrollable">
->>>>>>> Stashed changes
+
 					<div class="icon back">
 						<a href="#" data-rel="back">
 							<i class="fas fa-chevron-left"></i>
 						</a>
 					</div>
 
-<<<<<<< Updated upstream
+
 					<img src="img/dots/graphics/mood-10.svg">
 
 					<form id="list-add-form">
@@ -294,7 +295,7 @@
 
 						<input type="text" placeholder="About this mood.." data-role="none" id="list-add-description">		
 					
-=======
+
 					<div class="icon delete js-delete-mood">
 						<i class="fas fa-trash-alt"></i>
 					</div>
@@ -307,22 +308,22 @@
 							<li><a href="#">Locations</a></li>
 						</ul>
 					</nav>
->>>>>>> Stashed changes
+
 
 						<h5>Choose Background</h5>
 
 						<div class="form-control">
 						<input type="submit" class="form-button" value="Add Mood" data-role="none">
 						</div>
-<<<<<<< Updated upstream
+
 
 
 					</form>
 
-=======
+
 						<div class="button-group"></div>
 					</div>
->>>>>>> Stashed changes
+
 				</div>
 
 		</section>
@@ -331,48 +332,7 @@
 
 		<!-- Mood edit page -->
 
-			<section data-role="page" id="moodedit-page">
-
-				<div data-role="main">
-
-					<div class="icon back">
-						<a href="#" data-rel="back">
-							<i class="fas fa-chevron-left"></i>
-						</a>
-					</div>
-
-					<img src="img/dots/graphics/mood-10.svg">
-					<div class="bgc"></div>
-
-
-					<div class="edit-form">
-						
-					</div>
-
-					<form>
-						<div class="control-group">
-						    <input type="radio" id="color_orange" name="choose-color" class="hidden control-color-input" value="">
-						    <label for="color_orange" class="control-color-label" data-color="#F36E54"></label>
-
-<<<<<<< Updated upstream
-						    <input type="radio" id="color_pink" name="choose-color" class="hidden control-color-input" value="#E889B9">
-						    <label for="color_pink" class="control-color-label" data-color="#E889B9"></label>
-
-						    <input type="radio" id="color_yellow" name="choose-color" class="hidden control-color-input" value="#F8D26C">
-						    <label for="color_yellow" class="control-color-label" data-color="#F8D26C"></label>
-
-						    <input type="radio" id="color_green_light" name="choose-color" class="hidden control-color-input" value="#BBD534">
-						    <label for="color_green_light" class="control-color-label" data-color="#BBD534"></label>
-
-						    <input type="radio" id="color_blue_light" name="choose-color" class="hidden control-color-input" value="#5486C5">
-						    <label for="color_blue_light" class="control-color-label" data-color="#5486C5"></label>
-
-						    <input type="radio" id="color_purple" name="choose-color" class="hidden control-color-input" value="#E889B9">
-						    <label for="color_purple" class="control-color-label" data-color="#E889B9"></label>
-
-						    <input type="radio" id="color_blue_dark" name="choose-color" class="hidden control-color-input" value="#223F7B">
-						    <label for="color_blue_dark" class="control-color-label" data-color="#223F7B"></label>
-=======
+			
 		<section data-role="page" id="moodedit-page">
 			
 				<div class="icon back">
@@ -387,13 +347,10 @@
 
 			<div data-role="main">
 				
->>>>>>> Stashed changes
-
-						    <input type="radio" id="color_green_dark" name="choose-color" class="hidden control-color-input" value="#37BA9A">
-						    <label for="color_green_dark" class="control-color-label" data-color="#37BA9A"></label>
-						</div>
-					</form>
-
+				<div class="edit-form">
+					
+				</div>
+ 
 					<div class="cta-button">
 							<a href="#" data-rel="back" class="js-edit-mood">Done</a>
 					</div>
