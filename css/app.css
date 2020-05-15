@@ -497,7 +497,7 @@ label {
 }
 
 .moodlist a {
-	height: 0;
+	display: block;
 }
 
 .moodlist {
