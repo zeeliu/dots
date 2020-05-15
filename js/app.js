@@ -177,13 +177,6 @@ $(()=>{
 
 	})
 
-	.on("click",".mood-jump",function(e){
-		if($(this).data("id")===undefined) {
-			throw("No id defined on this element");
-		}
-		sessionStorage.moodId = $(this).data("id");
-	})
-
 	// set the session locationId when we click the "Visit Dot" button in makeHomeWindow
 	.on("click",".location-button",function(e){
 		if($(this).data("id")===undefined) {

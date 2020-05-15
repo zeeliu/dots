@@ -10,9 +10,16 @@ const showListPage = async () => {
 	});
 		console.log(d);
 
-		$("#list-page .moodlist")
-			.html(makeMoodList(d.result));
-	
+	$("#list-page .moodlist")
+		.html(makeMoodList(d.result));
+
+	$("#list-page .moodlist li").on('click', function(e) {
+		if($(this).data("id")===undefined) {
+			throw("No id defined on this element");
+		}
+		sessionStorage.moodId = $(this).data("id");
+		$.mobile.navigate("#mood-page");
+	})
 }
 
 
