@@ -2,9 +2,9 @@
 //templater (f=>{}) ([{},{}])
 
 const makeMoodList = templater (o=>`
-		<li><a href="#mood-page" class="mood-jump" data-id="${o.id}">
+		<li class="mood-jump" data-id="${o.id}">
 					<img src="${o.img}">
-					</a></li>
+					</li>
 					
 	`);
 
