@@ -93,13 +93,13 @@ $(() => {
 			} catch (e) {
 				throw e;
 			}
-		});
+		})
 
 	/* CLICKS */
 
 	// https://codepen.io/bronkula/pen/yPBbWY
 
-	$("[name='choose-color']")
+	// $("[name='choose-color']")
 		.on("click", function () {
 			// To find the color, you need to find the selected element
 			var bg = $("[name='choose-color']:checked").val();
