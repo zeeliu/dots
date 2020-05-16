@@ -188,15 +188,13 @@ $(() => {
 		})
 
 		.on("change", "#edit-upload-image", function (e) {
-			upload($("#edit-upload-image")[0].files[0]).then((d) => {
+			const file = $(this).find('input[name|="userfile"]')[0].files[0]
+			upload(file).then((d) => {
 				if (d.error) throw d;
 				else {
-					let src = `https://zeeliu.com/public_html/aau/wnm617/m13/uploads/${d.result}`;
-					$("#edit-upload-filename").val(src);
-					$("#edit-upload-page .image-picker").css(
-						"background-image",
-						`url(${src})`
-					);
+					const src = `https://zeeliu.com/aau/wnm617/omid/uploads/${d.result}`;
+					console.log('upload complete!',src)
+					$("#profile-edit-page img")[0].src = src;
 				}
 			});
 		})
