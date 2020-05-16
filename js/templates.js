@@ -52,36 +52,11 @@ const makeLocationProfile = templater(
 );
 
 
-const makeMoodProfile = templater(
-	(o) => `
-		<div class="profile-body">
-			
-			<div class="profile-description" style="border-bottom-color: ${o.bgc}">
-				<div><span>${o.description}</span></div>
-			</div>
-			
-	
-		</div>
-	`
-);
-
-const makeButtonGroup = templater(
-	(o) => `
-			
-				<div class="cta-button">
-					<a href="#addlocation-page">Make a dot</a>
-				</div>
-				<div class="secondary-button">
-					<a href="#moodedit-page" data-id="${o.id}">Edit mood</a>
-
-				</div>
-
-
-
+const makeMoodProfile = templater((o) => `
+	<div class="profile-description" style="border-bottom-color: ${o.bgc}">
+		<div><span>${o.description}</span></div>
+	</div>
 `);
-
-
-
 
 const makeHomeWindow = templater(
 	(o) => `

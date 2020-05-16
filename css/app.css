@@ -182,6 +182,11 @@ footer .profile .active {
 	overflow: auto;
 }
 
+#mood-page .scrollable {
+	display: flex;
+	flex-direction: column;
+}
+
 .marker {
 	position: absolute;
 	top: 50%;
@@ -427,7 +432,7 @@ label {
 }
 
 .profile-map {
-	height: 30vh;
+	flex-grow: 1;
 	position: relative;
 }
 
@@ -628,11 +633,11 @@ button {
     z-index: 5;
 }
 
-.nav-tabs a {
+.nav-tabs li {
 	font-weight: 500;
 }
 
-#mood-page .nav-tabs .active a {
+#mood-page .nav-tabs li.active {
 	background-color: var(--color-blue-light);
 	color: white;
 }
@@ -672,8 +677,8 @@ button {
 	margin-bottom: 0;
 	padding-left: 0;
 }
-.nav-tabs a,
-.nav a {
+.nav-tabs li,
+.nav li {
 	display: block;
 }
 .nav-tabs ul {
@@ -682,8 +687,6 @@ button {
 .nav-tabs li {
 	flex: 1 1 auto;
 	text-align: center;
-}
-.nav-tabs a {
 	line-height: var(--header-height);
 }
 
