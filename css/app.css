@@ -686,6 +686,25 @@ button {
 	position: relative;
 }
 
+#moodedit-page .profile-image .left,
+#moodedit-page .profile-image .right,
+#addmood-page .profile-image .left,
+#addmood-page .profile-image .right {
+	position: absolute;
+	width: 50%;
+	height: 100%;
+}
+
+#moodedit-page .profile-image .left,
+#addmood-page .profile-image .left {
+	left: 0;
+}
+
+#moodedit-page .profile-image .right,
+#addmood-page .profile-image .right {
+	right: 0;
+}
+
 .face-choose {
   position:absolute;
   padding:1em;
