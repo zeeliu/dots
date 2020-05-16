@@ -28,6 +28,9 @@ $(() => {
 				case "profile-edit-page":
 					showProfileEditPage();
 					break;
+				case "addmood-page":
+					showAddMoodPage();
+					break;
 				case "moodedit-page":
 					showMoodEditPage();
 					break;
@@ -101,7 +104,9 @@ $(() => {
 
 		.on("click", ".bg-color", function(e) {
 			const color = $(this).attr('data-color')
-			$(".img").css({ "background-color": color }).html();
+			$(this).siblings().removeClass("selected");
+			$(this).addClass("selected");
+			$("#addmood-page img, #moodedit-page img").css({ "background-color": color });
 		})
 
 		.on("click", ".js-addlocation", function (e) {
