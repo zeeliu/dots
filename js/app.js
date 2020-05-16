@@ -104,22 +104,6 @@ $(() => {
 			$(".img").css({ "background-color": color }).html();
 		})
 
-
-	.on("click",".js-addlocation",function(e) {
-		query({
-			type:'insert_location',
-			params:[
-				sessionStorage.moodId,
-				$("#add-location-lat").val(),
-				$("#add-location-lng").val(),
-				$("#add-location-description").val()
-
-			]
-		}).then(d=>{
-			if(d.error) throw d.error;
-			$.mobile.navigate("#home-page");
-		})
-
 		.on("click", ".js-addlocation", function (e) {
 			query({
 				type: "insert_location",
@@ -262,4 +246,4 @@ $(() => {
 		let template_str = $(template_id).html();
 		$(this).html(template_str);
 	});
-
+});
