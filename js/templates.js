@@ -23,7 +23,9 @@ const makeUserProfile = templater(
 	(o) => `
 		<div class="profile-head">
 			<div class="user-profile-image">
-				<img src="${o.img}" alt="">
+				<div class="pic">
+					<img src="${o.img}" alt="">
+				</div>
 			</div>
 		</div>
 		<h1>${o.name}</h1>
