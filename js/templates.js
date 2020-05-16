@@ -44,24 +44,6 @@ const makeMoodImage = templater(
 	`
 );
 
-const makeMoodProfile = templater(
-	(o) => `
-		<div class="profile-body">
-			<div class="profile-name">${o.name}</div>
-			<div class="profile-description">
-				<div>Description<span>${o.description}</span></div>
-			</div>
-			<div class="button-group">
-				<div class="cta-button">
-					<a href="#addlocation-page">Make a dot</a>
-				</div>
-				<div class="secondary-button">
-					<a href="#moodedit-page" data-id="${o.id}">Edit mood</a>
-				</div>
-			</div>
-		</div>
-	`
-);
 
 const makeLocationProfile = templater(
 	(o) => `
