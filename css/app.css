@@ -463,6 +463,10 @@ label {
 	flex-wrap: wrap;
 }
 
+#addnew-page .cta-button {
+	margin-bottom: 4em;
+}
+
 #list-page img,
 #addnew-page img {
 	width: 100%;
