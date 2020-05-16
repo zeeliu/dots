@@ -156,7 +156,7 @@ const showProfileEditPage = async () => {
 };
 
 const showAddMoodPage = async () => {
-	$("#addmood-page .edit-form").html(makeColorSelection(MOOD_COLORS));
+	$("#addmood-page .edit-form").html(makeEditMoodForm({name: "", description: ""}, MOOD_COLORS));
 	const selectedColor = MOOD_COLORS[0]
 	$("#addmood-page img").css({ "background-color": selectedColor });
 	$(`#addmood-page .bg-color[data-color|='${selectedColor}']`).addClass('selected');
