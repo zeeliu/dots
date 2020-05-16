@@ -710,13 +710,32 @@ button {
 
 #profile-page .card,
 #profile-edit-page .card {
-	height: 80vh;
+	position: relative;
+	width: 100%;
+	padding: 20px;
+	border-radius: 15px;
+	text-align: center;
 }
 
 #profile-page [data-role="main"],
 #profile-edit-page [data-role="main"] {
-	text-align: center;
-	top: 50px;
+	position: relative;
+	flex: 1 1 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+
+#profile-page [data-role="footer"],
+#profile-edit-page [data-role="footer"] {
+	width: 100%;
+	height: var(--footer-height);
+	line-height: var(--header-height);
+	background-color: white;
+	border-width: 0;
+	box-shadow: 0 0 10 rgb(0, 0, 25);
+	position: relative;
+	box-shadow: 0 -3px 2px -2px rgba(0, 0, 0, 0.2);
 }
 
 #profile-page .cta-button {
@@ -728,6 +747,7 @@ button {
 	width: 160px;
 	height: 160px;
 	margin: 0 auto;
+	margin-bottom: 10px;
 }
 .user-profile-image .pic {
     position: relative;
@@ -756,8 +776,21 @@ button {
 
 #profile-edit-page form input {
 	display: block;
-	margin: 0;
+    margin: 0;
+    width: 100%;
+    height: 40px;
+    border: 0;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    border-bottom: 1px solid;
 }
+
+#profile-edit-page .form-control {
+	width: auto;
+	margin-bottom: 20px;
+}
+
 #profile-edit-page #edit-upload-image {
 	position: relative;
 }
