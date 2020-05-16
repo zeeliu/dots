@@ -1,5 +1,16 @@
 // ASYNC
 
+const MOOD_COLORS = [
+	'#F36E54',
+	'#E889B9',
+	'#F8D26C',
+	'#BBD534',
+	'#5486C5',
+	'#9D80BB',
+	'#223F7B',
+	'#37BA9A',
+]
+
 const showListPage = async () => {
 	let d = await query({
 		type: "moods_from_user",
@@ -7,7 +18,12 @@ const showListPage = async () => {
 	});
 	console.log(d);
 
-	$("#list-page .moodlist").html(makeMoodList(d.result));
+	if (d.result.length === 0) {
+		$("#list-page .no-moods").show();
+	} else {
+		$("#list-page .no-moods").hide();
+		$("#list-page .moodlist").html(makeMoodList(d.result));
+	}
 
 	$("#list-page .moodlist li").on("click", function (e) {
 		if ($(this).data("id") === undefined) {
@@ -139,13 +155,20 @@ const showProfileEditPage = async () => {
 	$("#profile-edit-page .edit-form").html(makeEditUserForm(d.result[0]));
 };
 
+const showAddMoodPage = async () => {
+	$("#addmood-page .edit-form").html(makeColorSelection(MOOD_COLORS));
+	const selectedColor = MOOD_COLORS[0]
+	$("#addmood-page img").css({ "background-color": selectedColor });
+	$(`#addmood-page .bg-color[data-color|='${selectedColor}']`).addClass('selected');
+};
+
 const showMoodEditPage = async () => {
 	let d = await query({
 		type: "mood_by_id",
 		params: [sessionStorage.moodId],
 	});
 
-	$("#moodedit-page .edit-form").html(makeEditMoodForm(d.result[0]));
+	$("#moodedit-page .edit-form").html(makeEditMoodForm(d.result[0], MOOD_COLORS));
 	$("#moodedit-page img")
 
 		.attr("src", d.result[0].img)

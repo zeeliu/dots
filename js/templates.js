@@ -103,7 +103,7 @@ const makeEditUserForm = (o) => {
 	`;
 };
 
-const makeEditMoodForm = (o) => {
+const makeEditMoodForm = (o, colors) => {
 	return `
 		<form>
 			<div class="form-control">
@@ -111,16 +111,7 @@ const makeEditMoodForm = (o) => {
 				<input type="text" class="form-input" placeholder="Mood Name" id="edit-mood-name" data-role="none" value="${o.name}">
 			</div>
 
-			<div class="choose-bg">
-				<div class="bg-color" style="background-color: #F36E54;" data-color="#F36E54"></div>
-				<div class="bg-color" style="background-color: #E889B9;" data-color="#E889B9"></div>
-				<div class="bg-color" style="background-color: #F8D26C;" data-color="#F8D26C"></div>
-				<div class="bg-color" style="background-color: #BBD534;" data-color="#BBD534"></div>
-				<div class="bg-color" style="background-color: #5486C5;" data-color="#5486C5"></div>
-				<div class="bg-color" style="background-color: #9D80BB;" data-color="#9D80BB"></div>
-				<div class="bg-color" style="background-color: #223F7B;" data-color="#223F7B"></div>
-				<div class="bg-color" style="background-color: #37BA9A;" data-color="#37BA9A"></div>
-			</div>
+			${makeColorSelection(colors)}
 
 			<div class="form-control">
 				<label for="name">Description</label>
@@ -129,4 +120,19 @@ const makeEditMoodForm = (o) => {
 
 		</form>
 	`;
+};
+
+const makeColorSelection = (colors) => {
+	return `
+		<div class="choose-bg">
+			<div class="bg-color" style="background-color: ${colors[0]};" data-color="${colors[0]}"></div>
+			<div class="bg-color" style="background-color: ${colors[1]};" data-color="${colors[1]}"></div>
+			<div class="bg-color" style="background-color: ${colors[2]};" data-color="${colors[2]}"></div>
+			<div class="bg-color" style="background-color: ${colors[3]};" data-color="${colors[3]}"></div>
+			<div class="bg-color" style="background-color: ${colors[4]};" data-color="${colors[4]}"></div>
+			<div class="bg-color" style="background-color: ${colors[5]};" data-color="${colors[5]}"></div>
+			<div class="bg-color" style="background-color: ${colors[6]};" data-color="${colors[6]}"></div>
+			<div class="bg-color" style="background-color: ${colors[7]};" data-color="${colors[7]}"></div>
+		</div>
+	`
 };

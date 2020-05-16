@@ -28,6 +28,9 @@ $(() => {
 				case "profile-edit-page":
 					showProfileEditPage();
 					break;
+				case "addmood-page":
+					showAddMoodPage();
+					break;
 				case "moodedit-page":
 					showMoodEditPage();
 					break;
@@ -101,7 +104,30 @@ $(() => {
 
 		.on("click", ".bg-color", function(e) {
 			const color = $(this).attr('data-color')
-			$(".img").css({ "background-color": color }).html();
+			$(this).siblings().removeClass("selected");
+			$(this).addClass("selected");
+			$("#addmood-page img, #moodedit-page img").css({ "background-color": color });
+		})
+
+		.on("click", ".profile-image .left, .profile-image .right", function(e) {
+			const img = $(this).siblings("img");
+			let id = Number(img.attr("data-imgId"));
+			const min = 1;
+			const max = 6;
+			if ($(this).hasClass("left")) {
+				if (id == min) {
+					id = max;
+				} else {
+					id = id - 1;
+				}
+			} else if ($(this).hasClass("right")) {
+				if (id == max) {
+					id = min;
+				} else {
+					id = id + 1;
+				}
+			}
+			img.attr("data-imgId", id).attr("src", `img/dots/icons/face${id}.svg`);
 		})
 
 		.on("click", ".js-addlocation", function (e) {
