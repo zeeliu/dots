@@ -164,7 +164,7 @@ $(() => {
 		.on("click", ".js-delete-mood", function (e) {
 			query({
 				type: "delete_mood",
-				params: [$(this).data("id")],
+				params: [sessionStorage.moodId],
 			}).then((d) => {
 				if (d.error) throw d;
 				$.mobile.navigate("#list-page");
