@@ -710,9 +710,10 @@ button {
 	bottom: 10%;
 }
 
-#profile-page img,
-#profile-edit-page img {
-	width: 30%;
+.user-profile-image img {
+	width: 50%;
+    border-radius: 50%;
+    border: 5px solid #f8d26c;
 }
 
 #profile-edit-page form input {
