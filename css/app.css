@@ -78,6 +78,7 @@ button {
 }
 
 [data-role="footer"] {
+	width: 100%;
 	height: var(--footer-height);
 	line-height: var(--header-height);
 	background-color: white;
@@ -379,7 +380,7 @@ label {
 }
 
 .nav-air {
-	bottom: 0;
+	bottom: 5em;
 	position: absolute;
 	width: 100%;
 }

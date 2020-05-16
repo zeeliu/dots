@@ -22,7 +22,7 @@ const makeChooseMoodList = templater(
 const makeUserProfile = templater(
 	(o) => `
 		<div class="profile-head">
-			<div class="profile-image">
+			<div class="user-profile-image">
 				<img src="${o.img}" alt="">
 			</div>
 		</div>
