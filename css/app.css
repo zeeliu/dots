@@ -740,6 +740,10 @@ button {
 	line-height: var(--header-height);
 }
 
+footer .active:second-child{
+	background-color: var(--color-yellow-light);
+}
+
 /*ADDNEW PAGE*/
 #addnew-page form {
 	display: flex;
