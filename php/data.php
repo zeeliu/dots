@@ -175,7 +175,7 @@ function makeStatement($c,$t,$p) {
 		case "edit_user_image":
 			$r = makeQuery($c,"UPDATE `track_users` SET `img`=? WHERE id=?
 				","si",$p);
-			return ["result"=>"success"];
+			return $r;
 
 
 

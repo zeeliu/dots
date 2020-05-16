@@ -189,12 +189,30 @@ $(() => {
 
 		.on("change", "#edit-upload-image", function (e) {
 			const file = $(this).find('input[name|="userfile"]')[0].files[0]
+			$("#profile-edit-page .pic .loading").show();
+			$("#profile-edit-page .pic img").css('opacity', '0.5');
+
 			upload(file).then((d) => {
 				if (d.error) throw d;
 				else {
 					const src = `https://zeeliu.com/aau/wnm617/omid/uploads/${d.result}`;
 					console.log('upload complete!',src)
-					$("#profile-edit-page img")[0].src = src;
+					console.log('saving image to user...')
+
+					query({
+						type: "edit_user_image",
+						params: [
+							src,
+							sessionStorage.userId,
+						],
+					}).then((d) => {
+						if (d.error) throw d.error;
+						console.log('image saved!')
+						$("#profile-edit-page .pic .loading").hide();
+						$("#profile-edit-page .pic img")
+							.attr('src', src)
+							.css('opacity', '1')
+					});
 				}
 			});
 		})

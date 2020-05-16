@@ -126,11 +126,16 @@ const showHomePage = async () => {
 };
 
 const showProfileEditPage = async () => {
-	let d = await query({
+	const d = await query({
 		type: "user_by_id",
 		params: [sessionStorage.userId],
 	});
-
+	console.log('got user',d)
+	const img = d.result[0].img
+	if (img) {
+		$("#profile-edit-page .pic .loading").hide();
+		$("#profile-edit-page .pic img").attr('src', img).show();
+	}
 	$("#profile-edit-page .edit-form").html(makeEditUserForm(d.result[0]));
 };
 
