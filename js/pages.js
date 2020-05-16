@@ -77,17 +77,18 @@ const showMoodPage = async () => {
 		$("#mood-page .profile-image").html(makeMoodImage(d.result));		
 		$("#mood-page .profile-content").html(makeMoodProfile(d.result));
 		$("#mood-page .button-group").html(makeButtonGroup(d.result));
+		return d
+	}).then((mood) => {
+		query({
+			type: "locations_from_mood",
+			params: [sessionStorage.moodId],
+		}).then(async (d) => {
+			console.log(d);
+			const map_el = await makeMap("#mood-page .map");
+			makeMarkers(map_el, d.result, mood.result[0].bgc);
+		});
+	})
 
-	});
-
-	query({
-		type: "locations_from_mood",
-		params: [sessionStorage.moodId],
-	}).then(async (d) => {
-		console.log(d);
-		const map_el = await makeMap("#mood-page .map");
-		makeMarkers(map_el, d.result);
-	});
 };
 
 const showHomePage = async () => {
