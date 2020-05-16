@@ -102,6 +102,20 @@ $(() => {
 
 	// https://codepen.io/bronkula/pen/yPBbWY
 
+		.on("click", "#addmood-page .cta-button", function(e) {
+			query({
+				type: "insert_mood",
+				params: [
+					sessionStorage.userId,
+					$("#addmood-page .mood-name").val(),
+					$("#addmood-page .description").val(),
+				],
+			}).then((d) => {
+				if (d.error) throw d.error;
+				$.mobile.navigate("#addlocation-page");
+			});
+		})
+
 		.on("click", ".bg-color", function(e) {
 			const color = $(this).attr('data-color')
 			$(this).siblings().removeClass("selected");
@@ -164,7 +178,7 @@ $(() => {
 			query({
 				type: "edit_mood",
 				params: [
-					$("#edit-mood-name").val(),
+					$("#moodedit-page #edit-mood-name").val(),
 					$("#edit-mood-description").val(),
 					sessionStorage.moodId,
 				],
