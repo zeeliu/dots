@@ -171,24 +171,20 @@ $(() => {
 			});
 		})
 
-		.on("click", ".nav-tabs a", function (e) {
-			let id = $(this).parent().index();
-			$(this)
-				.parent()
-				.addClass("active")
-				.siblings()
-				.removeClass("active");
-
-			$(this)
-				.parent()
-				.parent()
-				.parent()
-				.next()
-				.children()
-				.eq(id)
-				.addClass("active")
-				.siblings()
-				.removeClass("active");
+		.on("click", "#mood-page .nav-tabs li", function (e) {
+			if ($(this).hasClass("active")) {
+				return;
+			}
+			$(this).addClass("active")
+			if ($(this).hasClass("description")) {
+				$('#mood-page .nav-tabs .locations').removeClass("active")
+				$('#mood-page .profile-map').removeClass("active")
+				$('#mood-page .profile-content').addClass("active")
+			} else {
+				$('#mood-page .nav-tabs .description').removeClass("active")
+				$('#mood-page .profile-content').removeClass("active")
+				$('#mood-page .profile-map').addClass("active")
+			}
 		})
 
 		.on("change", "#edit-upload-image", function (e) {
