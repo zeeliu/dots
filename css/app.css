@@ -788,3 +788,41 @@ footer .active:second-child{
 	display: block;
 	margin: 0;
 }
+#profile-edit-page #edit-upload-image {
+	position: relative;
+}
+
+#profile-edit-page .upload-button {
+	margin: 0 auto 10px auto;
+	position: relative;
+	width: 50%;
+	height: 50px;
+
+    display: block;
+    border-width: 0;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    background-color: var(--color-orange-light);
+    outline: 0;
+}
+
+#profile-edit-page .upload-button input {
+	opacity: 0;
+	height: 100%;
+}
+
+#profile-edit-page .upload-button div {
+    position: absolute;
+	margin: 0;
+	height: 100%;
+}
+
+#profile-edit-page .upload-button p {
+	margin: 0;
+	width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
