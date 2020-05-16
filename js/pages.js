@@ -76,7 +76,6 @@ const showMoodPage = async () => {
 		console.log(d);
 		$("#mood-page .profile-image").html(makeMoodImage(d.result));		
 		$("#mood-page .profile-content").html(makeMoodProfile(d.result));
-		$("#mood-page .button-group").html(makeButtonGroup(d.result));
 		return d
 	}).then((mood) => {
 		query({

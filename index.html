@@ -278,58 +278,40 @@
 
 
 	
-<!-- Mood Page -->
-
+	<!-- Mood Page -->
 	<section data-role="page" id="mood-page">
-
-
-
-			
-		
-			<div class="scrollable">
-
-
-
-				<div class="icon back">
-					<a href="#" data-rel="back">
-						<i class="fas fa-chevron-left"></i>
-					</a>
-				</div>
-
-				<div class="icon delete js-delete-mood">
-					<i class="fas fa-trash-alt"></i>
-				</div>
-
-
-				<div class="profile-image"></div>
-
-
-				<div data-role="main">
-
-					<nav class="profile-nav nav-tabs">
-
-						<ul class="display-flex">
-							<li  class="active"><a href="#">Description</a></li>
-							<li><a href="#">Locations</a></li>			
-						</ul>
-						
-					</nav>
-
-					<div class="profile-bottom">
-						<div class="profile-content active"></div>
-					
-						<div class="profile-map">
-							<div class="map"></div>
-						</div>
-
-					</div>
-
-					<div class="button-group"></div>
-				</div>
-
+		<div class="scrollable">
+			<div class="icon back">
+				<a href="#" data-rel="back">
+					<i class="fas fa-chevron-left"></i>
+				</a>
 			</div>
-
-		</section>
+			<div class="icon delete js-delete-mood">
+				<i class="fas fa-trash-alt"></i>
+			</div>
+			<div class="profile-image"></div>
+			<nav class="profile-nav nav-tabs">
+				<ul class="display-flex">
+					<li class="active"><a href="#">Description</a></li>
+					<li><a href="#">Locations</a></li>
+				</ul>
+			</nav>
+			<div class="profile-bottom">
+				<div class="profile-content active"></div>
+				<div class="profile-map">
+					<div class="map"></div>
+				</div>
+			</div>
+			<div class="button-group">
+				<div class="cta-button">
+					<a href="#addlocation-page">Make a dot</a>
+				</div>
+				<div class="secondary-button">
+					<a href="#moodedit-page">Edit mood</a>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
 
@@ -382,28 +364,17 @@
 
 
 		<!-- Mood edit page -->
-
-			
 		<section data-role="page" id="moodedit-page">
-			
-				<div class="icon back">
-					<a href="#" data-rel="back">
-						<i class="fas fa-chevron-left"></i>
-					</a>
-				</div>
-
-				<div class="profile-image">
-				</div>
-
+			<div class="icon back">
+				<a href="#" data-rel="back">
+					<i class="fas fa-chevron-left"></i>
+				</a>
+			</div>
+			<div class="profile-image"></div>
 			<div data-role="main">
-				
-				<div class="edit-form">
-					
-				</div>
- 
-					<div class="cta-button">
-							<a href="#" data-rel="back" class="js-edit-mood">Done</a>
-					</div>
+				<div class="edit-form"></div>
+				<div class="cta-button">
+					<a href="#" data-rel="back" class="js-edit-mood">Done</a>
 				</div>
 			</div>
 		</section>

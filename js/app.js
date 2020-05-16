@@ -161,14 +161,6 @@ $(() => {
 			sessionStorage.locationId = $(this).data("id");
 		})
 
-		// set the session moodId when we click "Edit mood" button in makeMoodProfile
-		.on("click", "a[href|='#moodedit-page']", function (e) {
-			if ($(this).data("id") === undefined) {
-				throw "No id defined on this element";
-			}
-			sessionStorage.moodId = $(this).data("id");
-		})
-
 		.on("click", ".js-delete-mood", function (e) {
 			query({
 				type: "delete_mood",
