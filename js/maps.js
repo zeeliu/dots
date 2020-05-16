@@ -32,7 +32,7 @@ const makeMap = async (target) =>{
 }
 
 
-const makeMarkers = (map_el,locs) => {
+const makeMarkers = (map_el,locs,color) => {
 
 	let map = map_el.data("map");
 	let markers = map_el.data("markers");
@@ -47,11 +47,15 @@ const makeMarkers = (map_el,locs) => {
 			position: o,
 			map: map,
 			icon: {
-				url:o.icon,
-				scaledSize: {
-					width:30,
-					height:30
-				}
+        // url:o.icon,
+        path: google.maps.SymbolPath.CIRCLE,
+        strokeColor: color,
+        // fillColor: 'yellow',//color,
+        scale: 10,
+				// scaledSize: {
+				// 	width:30,
+				// 	height:30
+				// }
 			}
 		});
 		markers.push(m);
