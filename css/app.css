@@ -699,6 +699,17 @@ button {
 }
 
 /*USER PROFILE PAGE*/
+
+#profile-page ,
+#profile-edit-page {
+	background-color: var(--color-orange-light);
+}
+
+#profile-page .card,
+#profile-edit-page .card {
+	height: 80vh;
+}
+
 #profile-page [data-role="main"],
 #profile-edit-page [data-role="main"] {
 	text-align: center;
