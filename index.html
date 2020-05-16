@@ -21,6 +21,7 @@
 		<script src="js/pages.js"></script>
 		<script src="js/maps.js"></script>
 		<script src="js/app.js"></script>
+		<script src="js/facepicker.js"></script>
 		<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 		<script
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbjzieb97H4D0oIQf7eim5Uv4KE5Ql1Xk"
@@ -270,7 +271,16 @@
 			<div data-role="main">
 				<div class="scrollable">
 					<ul class="moodlist"></ul>
-		</div>
+
+				</div>
+
+			</div>
+
+			<div class=" cta-button">
+				<a href="#addmood-page">Add mood</a>
+			</div>
+
+
 
 		<footer data-role="footer" data-template="#footer-nav-template"></footer>
 
@@ -316,45 +326,19 @@
 		<!-- Add mood page -->
 
 		<section data-role="page" id="addmood-page">
+			<div class="icon back">
+				<a href="#" data-rel="back">
+					<i class="fas fa-chevron-left"></i>
+				</a>
+			</div>
+			<div class="profile-image">
+				<img src="">
+			</div>
 			<div data-role="main">
-				<div class="icon back">
-					<a href="#" data-rel="back">
-						<i class="fas fa-chevron-left"></i>
-					</a>
+				<div class="edit-form"></div>
+				<div class="cta-button">
+					<a href="#" data-rel="back" class="js-edit-mood">Done</a>
 				</div>
-
-				<img src="img/dots/graphics/mood-10.svg" />
-
-				<form id="list-add-form">
-					<input
-						type="text"
-						placeholder="Mood Name"
-						data-role="none"
-						id="list-add-name"/>
-
-					<input
-						type="text"
-						placeholder="About this mood.."
-						data-role="none"
-						id="list-add-description"
-					/>
-
-					<h5>Choose Background</h5>
-
-					<div class="form-control">
-						<input
-							type="submit"
-							class="form-button"
-							value="Add Mood"
-							data-role="none"
-						/>
-
-
-
-					</form>
-
-					</div>
-				</form>
 			</div>
 		</section>
 
@@ -368,7 +352,13 @@
 					<i class="fas fa-chevron-left"></i>
 				</a>
 			</div>
-			<div class="profile-image"></div>
+			<div class="profile-image">
+				<img class="img" src="">
+				<input type="hidden" id="face-choice">
+				  <div class="face-choose right">▶</div>
+				  <div class="face-choose left">◀</div>
+			</div>
+
 			<div data-role="main">
 				<div class="edit-form"></div>
 				<div class="cta-button">
@@ -401,12 +391,12 @@
 						<label class="form-label" for="description"
 							>Description</label
 						>
-						<input
+						<textarea
 							class="form-input-box"
 							type="text"
 							placeholder="Say Something I'm giving up on you &#127925;"
 							data-role="none"
-						/>
+						></textarea>
 
 						<!--
 									<label for="favorite">Favorite</label>
@@ -438,40 +428,6 @@
 			</div>
 		</section>
 
-		<!-- Location edit page -->
-
-		<section data-role="page" id="editlocation-page">
-			<header data-role="header" class="ui-header ui-bar-inherit">
-				<ul>
-					<li class="flex-none">
-						<a href="#" data-rel="back">back</a>
-					</li>
-					<li class="flex-stretch"></li>
-					<li class="flex-none"></li>
-				</ul>
-			</header>
-
-			<div data-role="main">
-				<img src="img/dots/Graphics/mood-10.svg" />
-
-				<form>
-					<input
-						type="text"
-						placeholder="Mood Name"
-						data-role="none"
-					/>
-					<input
-						type="text"
-						placeholder="Say Somthing.."
-						data-role="none"
-					/>
-				</form>
-
-				<div class="cta-button">
-					<a href="#list-page">Done</a>
-				</div>
-			</div>
-		</section>
 
 		<!-- Profile page -->
 

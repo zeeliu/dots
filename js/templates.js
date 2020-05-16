@@ -39,15 +39,9 @@ const makeUserProfile = templater(
 
 const makeMoodImage = templater(
 	(o) => `
+		<div class="profile-name"><h1>${o.name}</h1></div>
 		<img class="face" src="${o.img}" style="background-color: ${o.bgc}" alt="">
-	`
-);
-
-
-const makeLocationProfile = templater(
-	(o) => `
-		<h1 class="profile-name">${o.name}</h1>
-		<div class="bgc" style="background-color: ${o.bgc}"> </div>
+		
 	`
 );
 
@@ -60,16 +54,18 @@ const makeMoodProfile = templater((o) => `
 
 const makeHomeWindow = templater(
 	(o) => `
-		<div class="display-flex recent-mood">
+		<div class="recent-mood">
 			<div class="flex-none">
-				<div class="recent-image">
-					<img src="${o.img}" alt="">
+				<div class="recent-image" style="background-color: ${o.bgc}">
+					<img src="${o.img}">
+					<div class="window-name">
+						<h2>${o.name}</h2>
+					</div>
 				</div>
 			</div>
 			<div class="flex-stretch">
-				<h2>${o.name}</h2>
+				
 				<div><strong>Description</strong> <span>${o.description}</span></div>
-				<div><strong>Favorite</strong> <span>${o.favorite}</span></div>
 			</div>
 		</div>
 	`

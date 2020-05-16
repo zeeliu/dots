@@ -49,9 +49,11 @@ const makeMarkers = (map_el,locs,color) => {
 			icon: {
         // url:o.icon,
         path: google.maps.SymbolPath.CIRCLE,
+        fillColor: color,
         strokeColor: color,
+        fillOpacity: 1.0,
         // fillColor: 'yellow',//color,
-        scale: 10,
+        scale: 7
 				// scaledSize: {
 				// 	width:30,
 				// 	height:30
