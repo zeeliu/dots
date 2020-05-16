@@ -205,6 +205,17 @@ footer .profile .active {
 	display: none;
 }
 
+
+
+.profile-description {
+	width: 80%;
+    margin: auto;
+    margin-top: 2em;
+    text-align: center;
+    padding: 1em;
+    border-bottom: 2px solid;
+}
+
 /*ICONS*/
 
 .icon {
@@ -218,7 +229,7 @@ footer .profile .active {
     position: absolute;
     color: white;
     opacity: 50%;
-    z-index: 2;
+    z-index: 5;
     position: absolute;
 
 }
@@ -240,6 +251,7 @@ footer .profile .active {
 	z-index: 2;
 	position: absolute;
 	width: 100%;
+	bottom: 3em;
 }
 
 /* FORMS */
@@ -560,9 +572,10 @@ button {
 
 .bgc {
 	width: 100%;
-	height: 20vh;
+	height: 40vh;
 	top: 0;
 	position: absolute;
+	z-index: -1;
 }
 
 /*MOOD PROFILE & EDIT & ADD PAGE*/
@@ -579,8 +592,44 @@ button {
 	margin-top: 2em;
 }
 
+#moodedit-page [data-role="main"],
+#mood-page [data-role="main"],
+#addmood-page [data-role="main"] {
+	flex: none;
+	height: 60vh;
+}
+
+#moodedit-page img, 
+#mood-page img,
+#addmood-page img {
+	z-index: 2;
+	top: -40px;
+	position: absolute;
+}
+
+.profile-image {
+	height: 40vh;
+	display: flex;
+    justify-content: center;
+}
+
+.profile-name {
+	color: white;
+    position: absolute;
+    top: 10em;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    z-index: 5;
+}
+
+.nav-tabs a {
+	font-weight: 500;
+}
+
 #mood-page .nav-tabs .active a {
-	background-color: var(--color-yellow-light);
+	background-color: var(--color-blue-light);
+	color: white;
 }
 
 .profile-bottom {

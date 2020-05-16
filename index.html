@@ -261,6 +261,7 @@
 			<div class="cta-button">
 				<a href="#addmood-page">Add mood</a>
 			</div>
+
 		</section>
 
 		<!-- List Page -->
@@ -269,53 +270,68 @@
 			<div data-role="main">
 				<div class="scrollable">
 					<ul class="moodlist"></ul>
+		</div>
+
+		<footer data-role="footer" data-template="#footer-nav-template"></footer>
+
+	</section>
+
+
+	
+<!-- Mood Page -->
+
+	<section data-role="page" id="mood-page">
+
+
+
+			
+		
+			<div class="scrollable">
+
+
+
+				<div class="icon back">
+					<a href="#" data-rel="back">
+						<i class="fas fa-chevron-left"></i>
+					</a>
 				</div>
-			</div>
 
-			<div class="cta-button">
-				<a href="#addmood-page">Add mood</a>
-			</div>
+				<div class="icon delete js-delete-mood">
+					<i class="fas fa-trash-alt"></i>
+				</div>
 
-			<footer
-				data-role="footer"
-				data-template="#footer-nav-template"
-			></footer>
-		</section>
 
-		<!-- Mood Page -->
+				<div class="profile-image"></div>
 
-		<section data-role="page" id="mood-page">
-			<div data-role="main">
-				<div class="scrollable">
-					<div class="icon back">
-						<a href="#" data-rel="back">
-							<i class="fas fa-chevron-left"></i>
-						</a>
-					</div>
 
-					<div class="icon delete">
-						<i class="fas fa-trash-alt"></i>
-					</div>
-
-					<div class="profile-image"></div>
+				<div data-role="main">
 
 					<nav class="profile-nav nav-tabs">
+
 						<ul class="display-flex">
-							<li class="active"><a href="#">Description</a></li>
-							<li><a href="#">Locations</a></li>
+							<li  class="active"><a href="#">Description</a></li>
+							<li><a href="#">Locations</a></li>			
 						</ul>
+						
 					</nav>
 
 					<div class="profile-bottom">
 						<div class="profile-content active"></div>
-
+					
 						<div class="profile-map">
 							<div class="map"></div>
 						</div>
+
 					</div>
+
+					<div class="button-group"></div>
 				</div>
+
 			</div>
+
 		</section>
+
+
 
 		<!-- Add mood page -->
 
@@ -334,8 +350,7 @@
 						type="text"
 						placeholder="Mood Name"
 						data-role="none"
-						id="list-add-name"
-					/>
+						id="list-add-name"/>
 
 					<input
 						type="text"
@@ -353,31 +368,50 @@
 							value="Add Mood"
 							data-role="none"
 						/>
+
+
+
+					</form>
+
 					</div>
 				</form>
 			</div>
 		</section>
 
+
+
+
 		<!-- Mood edit page -->
 
+			
 		<section data-role="page" id="moodedit-page">
-			<div data-role="main">
+			
 				<div class="icon back">
 					<a href="#" data-rel="back">
 						<i class="fas fa-chevron-left"></i>
 					</a>
 				</div>
 
-				<img src="img/dots/graphics/mood-10.svg" />
-				<div class="bgc"></div>
+				<div class="profile-image">
+					<img class="img" src="img/dots/graphics/mood-10.svg" />
+				</div>
 
-				<div class="edit-form"></div>
-
-				<div class="cta-button">
-					<a href="#" data-rel="back" class="js-edit-mood">Done</a>
+			<div data-role="main">
+				
+				<div class="edit-form">
+					
+				</div>
+ 
+					<div class="cta-button">
+							<a href="#" data-rel="back" class="js-edit-mood">Done</a>
+					</div>
 				</div>
 			</div>
 		</section>
+
+
+
+
 
 		<!-- Add location page -->
 

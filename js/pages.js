@@ -74,8 +74,10 @@ const showMoodPage = async () => {
 		params: [sessionStorage.moodId],
 	}).then((d) => {
 		console.log(d);
-		$("#mood-page .profile-image").html(makeMoodImage(d.result));
+		$("#mood-page .profile-image").html(makeMoodImage(d.result));		
 		$("#mood-page .profile-content").html(makeMoodProfile(d.result));
+		$("#mood-page .button-group").html(makeButtonGroup(d.result));
+
 	});
 
 	query({
@@ -102,6 +104,7 @@ const showHomePage = async () => {
 		return r;
 	}, []);
 	console.log(moods);
+
 
 	let map_el = await makeMap("#home-page .map");
 
@@ -139,6 +142,7 @@ const showMoodEditPage = async () => {
 
 	$("#moodedit-page .edit-form").html(makeEditMoodForm(d.result[0]));
 	$("#moodedit-page img")
+
 		.attr("src", d.result[0].img)
-		.css("background", d.result[0].color);
+		.css("background", d.result[0].bgc);
 };

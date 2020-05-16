@@ -1,12 +1,14 @@
 //templater (f=>{}) ([{},{}])
 
+
 const makeMoodList = templater(
 	(o) => `
 		<li class="mood-jump" data-id="${o.id}">
-			<img src="${o.img}">
+			<img src="${o.img}" style="background-color: ${o.bgc}">
 		</li>
 	`
 );
+
 
 const makeChooseMoodList = templater(
 	(o) => `
@@ -31,10 +33,14 @@ const makeUserProfile = templater(
 	`
 );
 
+
+
+
+
 const makeMoodImage = templater(
 	(o) => `
-		<img class="face" src="${o.img}" alt="">
-		<img class="bgc" src="${o.bgc}" alt="">
+		<img class="face" src="${o.img}" style+"background-color: ${o.bgc}" alt="">
+
 	`
 );
 
@@ -59,23 +65,42 @@ const makeMoodProfile = templater(
 
 const makeLocationProfile = templater(
 	(o) => `
+		<h1 class="profile-name">${o.name}</h1>
+		<div class="bgc" style="background-color: ${o.bgc}"> </div>
+	`
+);
+
+
+const makeMoodProfile = templater(
+	(o) => `
 		<div class="profile-body">
-			<div class="profile-name">${o.name}</div>
-			<div class="profile-description">
-				<div><strong>Description</strong> <span>${o.description}</span></div>
+			
+			<div class="profile-description" style="border-bottom-color: ${o.bgc}">
+				<div><span>${o.description}</span></div>
 			</div>
-			<div class="cta-button">
-				<a href="#addlocation-page">Make a dot</a>
-			</div>
-			<div class="secondary-button">
-				<a href="#moodedit-page">Edit mood</a>
-			</div>
-			<div>
-				<a href="#" class="js-delete-mood" data-id="${o.id}">Delete</a>
-			</div>
+			
+	
 		</div>
 	`
 );
+
+const makeButtonGroup = templater(
+	(o) => `
+			
+				<div class="cta-button">
+					<a href="#addlocation-page">Make a dot</a>
+				</div>
+				<div class="secondary-button">
+					<a href="#moodedit-page" data-id="${o.id}">Edit mood</a>
+
+				</div>
+
+
+
+`);
+
+
+
 
 const makeHomeWindow = templater(
 	(o) => `
