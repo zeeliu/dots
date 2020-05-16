@@ -631,11 +631,19 @@ button {
 	margin-top: 2em;
 }
 
+#addmood-page .cta-button {
+	margin: auto;
+    margin-bottom: 20px;
+}
+
 #moodedit-page [data-role="main"],
 #mood-page [data-role="main"],
 #addmood-page [data-role="main"] {
 	flex: none;
-	height: 60vh;
+	flex-grow: 1;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
 }
 
 #moodedit-page img, 
@@ -705,6 +713,19 @@ button {
 	right: 0;
 }
 
+#moodedit-page .form-control,
+#addmood-page .form-control {
+	width: auto;
+	margin-bottom: 20px;
+}
+
+#moodedit-page textarea,
+#addmood-page textarea {
+	padding: 10px;
+    border: 1px solid var(--color-yellow-light);
+	border-radius: 8px;
+}
+
 .face-choose {
   position:absolute;
   padding:1em;
@@ -725,9 +746,8 @@ button {
 }
 
 .choose-bg {
-	padding: 1em;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 
 .choose-bg .bg-color {

@@ -108,16 +108,17 @@ const makeEditMoodForm = (o, colors) => {
 		<form>
 			<div class="form-control">
 				<label for="name">Name</label>
-				<input type="text" class="form-input" placeholder="Mood Name" id="edit-mood-name" data-role="none" value="${o.name}">
+				<input type="text" class="form-input mood-name" placeholder="Mood Name" data-role="none" value="${o.name}">
 			</div>
-
-			${makeColorSelection(colors)}
+			<div class="form-control">
+				<label for="name">Choose a Color</label>
+				${makeColorSelection(colors)}
+			</div>
 
 			<div class="form-control">
 				<label for="name">Description</label>
-				<textarea class="form-input" placeholder="Type your Description" id="edit-mood-description"> ${o.description}</textarea>
+				<textarea class="form-input description" placeholder="Type your Description" id="edit-mood-description">${o.description}</textarea>
 			</div>
-
 		</form>
 	`;
 };
