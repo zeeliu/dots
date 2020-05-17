@@ -392,6 +392,7 @@ label {
 	text-align: center;
 	background-color: var(--color-orange-light);
 	outline: 0;
+	font-weight: bold;
 }
 
 .secondary-button {
