@@ -160,7 +160,7 @@ const showAddMoodPage = async () => {
 	const selectedColor = MOOD_COLORS[0]
 	$("#addmood-page img")
 		.css({ "background-color": selectedColor })
-		.attr("src", `img/dots/icons/face${d.result[0].img}.svg`);
+		.attr("src", `img/dots/icons/face1.svg`);
 	$(`#addmood-page .bg-color[data-color|='${selectedColor}']`).addClass('selected');
 };
 

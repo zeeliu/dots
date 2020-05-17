@@ -141,7 +141,7 @@ function makeStatement($c,$t,$p) {
 				VALUES
 				(?,?,?,?,?,NOW())
 				","sssss",$p);
-			return ["result"=>"success"];
+			return makeQuery($c, "SELECT LAST_INSERT_ID() as `id`", "", $p);
 
 		case "insert_location":
 			$r = makeQuery($c,"INSERT INTO
