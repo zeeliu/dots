@@ -87,7 +87,7 @@ function makeStatement($c,$t,$p) {
 
 
 		case "moods_from_user":
-		return makeQuery($c,"SELECT * FROM `track_moods` WHERE uid = ?","i",$p);
+		return makeQuery($c,"SELECT * FROM `track_moods` WHERE uid = ? ORDER BY `id` DESC","i",$p);
 
 		case "locations_from_mood":
 		return makeQuery($c,"SELECT * FROM `track_locations` WHERE mid = ?","i",$p);
