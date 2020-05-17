@@ -158,7 +158,9 @@ const showProfileEditPage = async () => {
 const showAddMoodPage = async () => {
 	$("#addmood-page .edit-form").html(makeEditMoodForm({name: "", description: ""}, MOOD_COLORS));
 	const selectedColor = MOOD_COLORS[0]
-	$("#addmood-page img").css({ "background-color": selectedColor });
+	$("#addmood-page img")
+		.css({ "background-color": selectedColor })
+		.attr("src", `img/dots/icons/face1.svg`);
 	$(`#addmood-page .bg-color[data-color|='${selectedColor}']`).addClass('selected');
 };
 
@@ -170,7 +172,8 @@ const showMoodEditPage = async () => {
 
 	$("#moodedit-page .edit-form").html(makeEditMoodForm(d.result[0], MOOD_COLORS));
 	$("#moodedit-page img")
+		.css({ "background-color": d.result[0].bgc })
+		.attr("src", `img/dots/icons/face${d.result[0].img}.svg`)
+	$(`#addmood-page .bg-color[data-color|='${d.result[0].bgc}']`).addClass('selected');
 
-		.attr("src", d.result[0].img)
-		.css("background", d.result[0].bgc);
 };

@@ -108,11 +108,15 @@ $(() => {
 				params: [
 					sessionStorage.userId,
 					$("#addmood-page .mood-name").val(),
+					$("#addmood-page .bg-color.selected").attr("data-color"),
 					$("#addmood-page .description").val(),
+					$("#addmood-page [data-imgid]").attr("data-imgid"),
 				],
 			}).then((d) => {
 				if (d.error) throw d.error;
-				$.mobile.navigate("#addlocation-page");
+				console.log(d)
+				sessionStorage.moodId = d.result[0].id
+				$.mobile.navigate("#mood-page");
 			});
 		})
 

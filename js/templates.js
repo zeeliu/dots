@@ -4,7 +4,7 @@
 const makeMoodList = templater(
 	(o) => `
 		<li class="mood-jump" data-id="${o.id}">
-			<img src="${o.img}" style="background-color: ${o.bgc}">
+			<img src="img/dots/icons/face${o.img}.svg" style="background-color: ${o.bgc}">
 		</li>
 	`
 );
@@ -13,7 +13,7 @@ const makeMoodList = templater(
 const makeChooseMoodList = templater(
 	(o) => `
 		<li><a href="#addlocation-page" class="mood-jump" data-id="${o.id}">
-			<img src="${o.img}" style="background-color: ${o.bgc}">
+			<img src="img/dots/icons/face${o.img}.svg" style="background-color: ${o.bgc}">
 		</a></li>
 	`
 );
@@ -42,7 +42,7 @@ const makeUserProfile = templater(
 const makeMoodImage = templater(
 	(o) => `
 		<div class="profile-name"><h1>${o.name}</h1></div>
-		<img class="face" src="${o.img}" style="background-color: ${o.bgc}" alt="">
+		<img class="face" src="img/dots/icons/face${o.img}.svg" style="background-color: ${o.bgc}" alt="">
 		
 	`
 );

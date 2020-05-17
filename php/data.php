@@ -87,7 +87,7 @@ function makeStatement($c,$t,$p) {
 
 
 		case "moods_from_user":
-		return makeQuery($c,"SELECT * FROM `track_moods` WHERE uid = ?","i",$p);
+		return makeQuery($c,"SELECT * FROM `track_moods` WHERE uid = ? ORDER BY `id` ASC","i",$p);
 
 		case "locations_from_mood":
 		return makeQuery($c,"SELECT * FROM `track_locations` WHERE mid = ?","i",$p);
@@ -137,13 +137,11 @@ function makeStatement($c,$t,$p) {
 		case "insert_mood":
 			$r = makeQuery($c,"INSERT INTO
 				`track_moods`
-				(`uid`,`name`,`description`,`date_create`)
+				(`uid`,`name`,`bgc`,`description`,`img`,`date_create`)
 				VALUES
-				(?,?,?,NOW())
-				","iss",$p);
-			return ["result"=>"success"];
-
-
+				(?,?,?,?,?,NOW())
+				","sssss",$p);
+			return makeQuery($c, "SELECT LAST_INSERT_ID() as `id`", "", $p);
 
 		case "insert_location":
 			$r = makeQuery($c,"INSERT INTO

@@ -21,7 +21,6 @@
 		<script src="js/pages.js"></script>
 		<script src="js/maps.js"></script>
 		<script src="js/app.js"></script>
-		<script src="js/facepicker.js"></script>
 		<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 		<script
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbjzieb97H4D0oIQf7eim5Uv4KE5Ql1Xk"
@@ -218,13 +217,6 @@
 					<ul class="moodlist"></ul>
 				</div>
 			</div>
-			<!--<div data-role="main">
-						<img src="img/dots/graphics/mood-10.svg">
-						<form>
-							<input type="text" placeholder="Mood Name" data-role="none">
-							<input type="text" placeholder="This is the description of the mood, of the cat. He swag." data-role="none">
-
-						</form>-->
 			<div class=" cta-button">
 				<a href="#addmood-page">Add mood</a>
 			</div>
@@ -258,12 +250,9 @@
 	<section data-role="page" id="mood-page">
 		<div class="scrollable">
 			<div class="icon back">
-				<a href="#" data-rel="back">
+				<a href="#list-page">
 					<i class="fas fa-chevron-left"></i>
 				</a>
-			</div>
-			<div class="icon delete js-delete-mood">
-				<i class="fas fa-trash-alt"></i>
 			</div>
 			<div class="profile-image"></div>
 			<nav class="profile-nav nav-tabs">
@@ -298,17 +287,15 @@
 				</a>
 			</div>
 			<div class="profile-image">
-				<div class="left"></div>
-				<div class="right"></div>
+				<div class="left">◀</div>
+				<div class="right">▶</div>
 				<img data-imgId="1" src="img/dots/icons/face1.svg"/>
 			</div>
 			<div data-role="main">
 				<div class="edit-form">
 					<div class="choose-bg"></div>
 				</div>
-				<div class="cta-button">
-					<a href="#" data-rel="back" class="js-edit-mood">Done</a>
-				</div>
+				<div class="cta-button">Done</div>
 			</div>
 		</section>
 
@@ -322,18 +309,19 @@
 					<i class="fas fa-chevron-left"></i>
 				</a>
 			</div>
-			<div class="profile-image">
-				<img class="img" src="">
-				<input type="hidden" id="face-choice">
-				  <div class="face-choose right">▶</div>
-				  <div class="face-choose left">◀</div>
+			<div class="icon delete js-delete-mood">
+				<i class="fas fa-trash-alt"></i>
 			</div>
-
+			<div class="profile-image">
+				<div class="left">◀</div>
+				<div class="right">▶</div>
+				<img data-imgId="1" src="img/dots/icons/face1.svg"/>
+			</div>
 			<div data-role="main">
-				<div class="edit-form"></div>
-				<div class="cta-button">
-					<a href="#" data-rel="back" class="js-edit-mood">Add Mood</a>
+				<div class="edit-form">
+					<div class="choose-bg"></div>
 				</div>
+				<div class="cta-button">Done</div>
 			</div>
 		</section>
 
@@ -348,7 +336,7 @@
 				<h1>Choose Location</h1>
 				<ul>
 					<li class="flex-none">
-						<a href="#" data-rel="back">back</a>
+						<a href="#mood-page">back</a>
 					</li>
 					<li class="flex-stretch"></li>
 					<li class="flex-none"></li>
@@ -367,21 +355,6 @@
 							placeholder="Say Something I'm giving up on you &#127925;"
 							data-role="none"
 						></textarea>
-
-						<!--
-									<label for="favorite">Favorite</label>
-									<input type="checkbox" name="favorite" id="list-add-favorite">
-
-										<label class="form-label" for="list-add-degree">Degree</label>
-										<select class="form-button" id="list-add-degree" data-role="none">
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-										</select>
-									-->
-
 						<div class="cta-button js-addlocation">
 							<a href="#">Make</a>
 						</div>

@@ -633,7 +633,10 @@ button {
 
 #addmood-page .cta-button {
 	margin: auto;
-    margin-bottom: 20px;
+	margin-bottom: 20px;
+	color: #FFF;
+	font-weight: bold;
+	text-decoration: none;
 }
 
 #moodedit-page [data-role="main"],
@@ -706,6 +709,26 @@ button {
 #moodedit-page .profile-image .left,
 #addmood-page .profile-image .left {
 	left: 0;
+}
+
+#addmood-page .profile-image .right,
+#moodedit-page .profile-image .right,
+#addmood-page .profile-image .left,
+#moodedit-page .profile-image .left {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: #FFF;
+}
+
+#addmood-page .profile-image .left,
+#moodedit-page .profile-image .left {
+	justify-content: flex-start;
+}
+
+#addmood-page .profile-image .right,
+#moodedit-page .profile-image .right {
+	justify-content: flex-end;
 }
 
 #moodedit-page .profile-image .right,
