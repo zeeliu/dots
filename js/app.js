@@ -288,6 +288,7 @@ $(() => {
 						$("#profile-edit-page .pic img")
 							.attr('src', src)
 							.css('opacity', '1')
+							.show();
 					});
 				}
 			});

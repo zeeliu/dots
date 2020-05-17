@@ -146,8 +146,8 @@ const showProfileEditPage = async () => {
 	});
 	console.log('got user',d)
 	const img = d.result[0].img
+	$("#profile-edit-page .pic .loading").hide();
 	if (img) {
-		$("#profile-edit-page .pic .loading").hide();
 		$("#profile-edit-page .pic img").attr('src', img).show();
 	}
 	$("#profile-edit-page .edit-form").html(makeEditUserForm(d.result[0]));
