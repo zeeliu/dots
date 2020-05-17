@@ -150,7 +150,7 @@ function makeStatement($c,$t,$p) {
 				VALUES
 				(?,?,?,?,?,?,'https://via.placeholder.com/100/888/fff/?text=ICON',NOW())
 				","iddiis",$p);
-			return ["result"=>"success"];
+			return ["result"=>$r];
 
 
 

@@ -24,47 +24,50 @@ const showListPage = async () => {
 		$("#list-page .no-moods").hide();
 		$("#list-page .moodlist").html(makeMoodList(d.result));
 	}
-
-	$("#list-page .moodlist li").on("click", function (e) {
-		if ($(this).data("id") === undefined) {
-			throw "No id defined on this element";
-		}
-		sessionStorage.moodId = $(this).data("id");
-		$.mobile.navigate("#mood-page");
-	});
-};
-
-const chooseListPage = async () => {
-	let d = await query({
-		type: "moods_from_user",
-		params: [sessionStorage.userId],
-	});
-	console.log(d);
-
-	$("#addnew-page .moodlist").html(makeChooseMoodList(d.result));
 };
 
 const showAddLocationPage = async () => {
-	let map_el = await makeMap("#addlocation-page .map");
+	const map_el = await makeMap("#addlocation-page .map");
+	
+	$("#addlocation-page .dot").css("background-color", sessionStorage.moodColor)
+	// const center = map_el.data("map").getCenter()
+	// $("#add-location-lat").val(center.lat());
+	// $("#add-location-lng").val(center.lng());
 
-	let m = false;
+	// $("#addlocation-page .cta-button").on("click", function(e) {
+	// 	const center = map_el.data("map").getCenter()
+	// 	setMarker(map_el, {
+	// 		lat: center.lat(),
+	// 		lng: center.lng(),
+	// 	}, 'blue')
+	// });
 
-	map_el.data("map").addListener("click", function (e) {
-		let pos = {
-			lat: e.latLng.lat(),
-			lng: e.latLng.lng(),
-		};
+	// let m = false;
 
-		if (m != false) m.setMap(null);
+	// map_el.data("map").addListener("click", function (e) {
+	// 	let pos = {
+	// 		lat: e.latLng.lat(),
+	// 		lng: e.latLng.lng(),
+	// 	};
 
-		$("#add-location-lat").val(pos.lat);
-		$("#add-location-lng").val(pos.lng);
+	// 	if (m != false) m.setMap(null);
 
-		m = new google.maps.Marker({
-			position: pos,
-			map: map_el.data("map"),
-		});
-	});
+	// 	$("#add-location-lat").val(pos.lat);
+	// 	$("#add-location-lng").val(pos.lng);
+
+	// 	const color = 'blue'
+	// 	m = new google.maps.Marker({
+	// 		position: pos,
+	// 		map: map_el.data("map"),
+	// 		icon: {
+	// 			path: google.maps.SymbolPath.CIRCLE,
+	// 			fillColor: color,
+	// 			strokeColor: color,
+	// 			fillOpacity: 1.0,
+	// 			scale: 7
+	// 		}
+	// 	});
+	// });
 
 	setMapBounds(map_el.data("map"), []);
 };
@@ -90,6 +93,7 @@ const showMoodPage = async () => {
 		params: [sessionStorage.moodId],
 	}).then((d) => {
 		console.log(d);
+		sessionStorage.moodColor = d.result[0].bgc
 		$("#mood-page .profile-image").html(makeMoodImage(d.result));		
 		$("#mood-page .profile-content").html(makeMoodProfile(d.result));
 		return d
@@ -119,21 +123,15 @@ const showHomePage = async () => {
 		if (o.lat) r.push(o);
 		return r;
 	}, []);
-	console.log(moods);
-
+	console.log({moods}, {res:d.result});
 
 	let map_el = await makeMap("#home-page .map");
 
 	makeMarkers(map_el, moods);
-
+	if (!map_el.data("markers")) return;
+	
 	map_el.data("markers").forEach((o, i) => {
 		o.addListener("click", function (e) {
-			// example 1
-			/*			$("#home-page .basin")
-				.addClass("active")
-				.html(makeHomeWindow(moods[i]));*/
-
-			// example 2
 			console.log(moods[i]);
 			map_el.data("infoWindow").open(map_el.data("map"), o);
 			map_el.data("infoWindow").setContent(makeHomeWindow(moods[i]));

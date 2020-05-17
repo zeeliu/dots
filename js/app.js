@@ -99,6 +99,33 @@ $(() => {
 
 	// https://codepen.io/bronkula/pen/yPBbWY
 
+		.on("click", "#addlocation-page .cta-button", async function(e) {
+			const map_el = await makeMap("#addlocation-page .map");
+			console.log({map_el})
+			const center = map_el.data("map").getCenter();
+			// const color = sessionStorage.moodColor;
+			// setMarker(map_el, {
+			// 	lat: center.lat(),
+			// 	lng: center.lng(),
+			// }, color)
+
+			query({
+				type: "insert_location",
+				params: [
+					sessionStorage.moodId,
+					center.lat(),
+					center.lng(),
+					1,
+					0,
+					$("#addlocation-page textarea").val(),
+				],
+			}).then((d) => {
+				if (d.error) throw d.error;
+				console.log(d)
+				$.mobile.navigate("#home-page");
+			});
+		})
+
 		.on("click", "#list-page .moodlist li", function (e) {
 			if ($(this).data("id") === undefined) {
 				throw "No id defined on this element";
@@ -153,20 +180,20 @@ $(() => {
 			img.attr("data-imgId", id).attr("src", `img/dots/icons/face${id}.svg`);
 		})
 
-		.on("click", ".js-addlocation", function (e) {
-			query({
-				type: "insert_location",
-				params: [
-					sessionStorage.moodId,
-					$("#add-location-lat").val(),
-					$("#add-location-lng").val(),
-					$("#add-location-description").val(),
-				],
-			}).then((d) => {
-				if (d.error) throw d.error;
-				$.mobile.navigate("#home-page");
-			});
-		})
+		// .on("click", ".js-addlocation", function (e) {
+		// 	query({
+		// 		type: "insert_location",
+		// 		params: [
+		// 			sessionStorage.moodId,
+		// 			$("#add-location-lat").val(),
+		// 			$("#add-location-lng").val(),
+		// 			$("#add-location-description").val(),
+		// 		],
+		// 	}).then((d) => {
+		// 		if (d.error) throw d.error;
+		// 		$.mobile.navigate("#home-page");
+		// 	});
+		// })
 
 		.on("click", ".js-edit-user", function (e) {
 			query({
