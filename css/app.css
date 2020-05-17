@@ -237,12 +237,6 @@ button {
 	opacity: 95%;
 }
 
-#addnew-page .back {
-	color: black;
-	top: 0;
-	left: 0;
-}
-
 .delete, .edit{
 	top: 0.8em;
 	right: 0.8em;
@@ -487,26 +481,22 @@ button img {
 	padding: 0;
 }
 
-#list-page .moodlist,
-#addnew-page .moodlist {
+#list-page .moodlist {
 	list-style: none;
 	padding-inline-start: 0px;
 	display: flex;
 	flex-wrap: wrap;
 }
 
-#addnew-page .cta-button,
 #list-page .cta-button {
 	margin-bottom: 5em;
 }
 
-#list-page img,
-#addnew-page img {
+#list-page img {
 	width: 100%;
 }
 
-#list-page .moodlist li,
-#addnew-page .moodlist li {
+#list-page .moodlist li {
 	width: 50%;
 	display: inline;
 	line-height: 0;
@@ -806,17 +796,6 @@ button {
 
 footer .active:second-child{
 	background-color: var(--color-yellow-light);
-}
-
-/*ADDNEW PAGE*/
-#addnew-page form {
-	display: flex;
-	flex-direction: column;
-	padding-bottom: 10em;
-}
-
-#addnew-page form input {
-	text-align: center;
 }
 
 /*USER PROFILE PAGE*/

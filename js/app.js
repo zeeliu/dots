@@ -10,9 +10,6 @@ $(() => {
 				case "home-page":
 					showHomePage();
 					break;
-				case "addnew-page":
-					chooseListPage();
-					break;
 				case "addlocation-page":
 					showAddLocationPage();
 					break;
@@ -101,6 +98,14 @@ $(() => {
 	/* CLICKS */
 
 	// https://codepen.io/bronkula/pen/yPBbWY
+
+		.on("click", "#list-page .moodlist li", function (e) {
+			if ($(this).data("id") === undefined) {
+				throw "No id defined on this element";
+			}
+			sessionStorage.moodId = $(this).data("id");
+			$.mobile.navigate("#mood-page");
+		})
 
 		.on("click", "#addmood-page .cta-button", function(e) {
 			query({
