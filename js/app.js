@@ -110,9 +110,11 @@ $(() => {
 					$("#addmood-page .mood-name").val(),
 					$("#addmood-page .bg-color.selected").attr("data-color"),
 					$("#addmood-page .description").val(),
+					$("#addmood-page [data-imgid]").attr("data-imgid"),
 				],
 			}).then((d) => {
 				if (d.error) throw d.error;
+				console.log(d)
 				$.mobile.navigate("#addlocation-page");
 			});
 		})
