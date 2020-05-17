@@ -134,6 +134,23 @@ $(() => {
 			$.mobile.navigate("#mood-page");
 		})
 
+		.on("click", "#moodedit-page .cta-button", function(e) {
+			query({
+				type: "edit_mood",
+				params: [
+					$("#moodedit-page .mood-name").val(),
+					$("#moodedit-page .bg-color.selected").attr("data-color"),
+					$("#moodedit-page .description").val(),
+					$("#moodedit-page [data-imgid]").attr("data-imgid"),
+					sessionStorage.moodId,
+				],
+			}).then((d) => {
+				if (d.error) throw d.error;
+				console.log(d)
+				$.mobile.navigate("#mood-page");
+			});
+		})
+
 		.on("click", "#addmood-page .cta-button", function(e) {
 			query({
 				type: "insert_mood",
@@ -204,19 +221,6 @@ $(() => {
 					$("#edit-user-city").val(),
 					$("#edit-user-bio").val(),
 					sessionStorage.userId,
-				],
-			}).then((d) => {
-				if (d.error) throw d.error;
-			});
-		})
-
-		.on("click", ".js-edit-mood", function (e) {
-			query({
-				type: "edit_mood",
-				params: [
-					$("#moodedit-page #edit-mood-name").val(),
-					$("#edit-mood-description").val(),
-					sessionStorage.moodId,
 				],
 			}).then((d) => {
 				if (d.error) throw d.error;

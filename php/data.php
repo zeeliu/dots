@@ -182,9 +182,11 @@ function makeStatement($c,$t,$p) {
 				`track_moods`
 				SET
 					`name`=?,
-					`description`=?
+					`bgc`=?,
+					`description`=?,
+					`img`=?
 				WHERE id=?
-				","ssi",$p);
+				","sssss",$p);
 			return ["result"=>"success"];
 
 
