@@ -108,6 +108,7 @@ $(() => {
 				params: [
 					sessionStorage.userId,
 					$("#addmood-page .mood-name").val(),
+					$("#addmood-page .bg-color.selected").attr("data-color"),
 					$("#addmood-page .description").val(),
 				],
 			}).then((d) => {

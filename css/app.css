@@ -633,7 +633,10 @@ button {
 
 #addmood-page .cta-button {
 	margin: auto;
-    margin-bottom: 20px;
+	margin-bottom: 20px;
+	color: #FFF;
+	font-weight: bold;
+	text-decoration: none;
 }
 
 #moodedit-page [data-role="main"],

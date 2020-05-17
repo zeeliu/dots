@@ -137,13 +137,11 @@ function makeStatement($c,$t,$p) {
 		case "insert_mood":
 			$r = makeQuery($c,"INSERT INTO
 				`track_moods`
-				(`uid`,`name`,`description`,`date_create`)
+				(`uid`,`name`,`bgc`,`description`,`date_create`)
 				VALUES
-				(?,?,?,NOW())
-				","iss",$p);
+				(?,?,?,?,NOW())
+				","ssss",$p);
 			return ["result"=>"success"];
-
-
 
 		case "insert_location":
 			$r = makeQuery($c,"INSERT INTO
