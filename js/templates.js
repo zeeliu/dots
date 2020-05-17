@@ -42,7 +42,7 @@ const makeUserProfile = templater(
 const makeMoodImage = templater(
 	(o) => `
 		<div class="profile-name"><h1>${o.name}</h1></div>
-		<img class="face" src="${o.img}" style="background-color: ${o.bgc}" alt="">
+		<img class="face" src="img/dots/icons/face${o.img}.svg" style="background-color: ${o.bgc}" alt="">
 		
 	`
 );

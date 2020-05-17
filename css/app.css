@@ -711,6 +711,26 @@ button {
 	left: 0;
 }
 
+#addmood-page .profile-image .right,
+#moodedit-page .profile-image .right,
+#addmood-page .profile-image .left,
+#moodedit-page .profile-image .left {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: #FFF;
+}
+
+#addmood-page .profile-image .left,
+#moodedit-page .profile-image .left {
+	justify-content: flex-start;
+}
+
+#addmood-page .profile-image .right,
+#moodedit-page .profile-image .right {
+	justify-content: flex-end;
+}
+
 #moodedit-page .profile-image .right,
 #addmood-page .profile-image .right {
 	right: 0;
