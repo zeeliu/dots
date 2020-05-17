@@ -174,6 +174,6 @@ const showMoodEditPage = async () => {
 	$("#moodedit-page img")
 		.css({ "background-color": d.result[0].bgc })
 		.attr("src", `img/dots/icons/face${d.result[0].img}.svg`)
-	$(`#addmood-page .bg-color[data-color|='${selectedColor}']`).addClass('selected');
+	$(`#addmood-page .bg-color[data-color|='${d.result[0].bgc}']`).addClass('selected');
 
 };

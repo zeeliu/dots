@@ -116,7 +116,7 @@ $(() => {
 				if (d.error) throw d.error;
 				console.log(d)
 				sessionStorage.moodId = d.result[0].id
-				$.mobile.navigate("#addlocation-page");
+				$.mobile.navigate("#mood-page");
 			});
 		})
 
