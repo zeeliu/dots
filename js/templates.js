@@ -24,7 +24,7 @@ const makeUserProfile = templater(
 		<div class="profile-head">
 			<div class="user-profile-image">
 				<div class="pic">
-					${o.img ? `<img src="${o.img}" alt="">` : ''}
+					${o.img ? `<img src="img/dots/icons/face${o.img}.svg" alt="">` : ''}
 				</div>
 			</div>
 		</div>
@@ -59,7 +59,7 @@ const makeHomeWindow = templater(
 		<div class="recent-mood">
 			<div class="flex-none">
 				<div class="recent-image" style="background-color: ${o.bgc}">
-					<img src="${o.img}">
+					<img src="img/dots/icons/face${o.img}.svg">
 					<div class="window-name">
 						<h2>${o.name}</h2>
 					</div>
