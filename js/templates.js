@@ -57,18 +57,17 @@ const makeMoodProfile = templater((o) => `
 const makeHomeWindow = templater(
 	(o) => `
 		<div class="recent-mood">
-			<div class="flex-none">
-				<div class="recent-image" style="background-color: ${o.bgc}">
+			<div class="recent-image" style="background-color: ${o.bgc}">
 					<img src="img/dots/icons/face${o.img}.svg">
 					<div class="window-name">
 						<h2>${o.name}</h2>
 					</div>
-				</div>
 			</div>
-			<div class="flex-stretch">
-				
-				<div><strong>Description</strong> <span>${o.description}</span></div>
-			</div>
+			<p class="recent-description">
+				<b>Description</b>
+				<br/>
+				${o.description}
+			</p>
 		</div>
 	`
 );

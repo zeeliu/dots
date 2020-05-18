@@ -468,11 +468,8 @@ button img {
 }
 
 .window-name {
-	width: 100%;
     text-align: center;
     color: white;
-    top: 70px;
-    position: absolute;
 }
 
 /*LIST PAGE*/
@@ -1004,3 +1001,35 @@ footer .active:second-child{
   transform-origin: 0 0; /* see note above */
 }
 .ldio-la70mjnaird div { box-sizing: content-box; }
+
+
+.recent-mood {
+	display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+.recent-image {
+	background-color: #37BA9A;
+    display: flex;
+	flex-direction: column;
+}
+.recent-image h2 {
+	margin: -10px 0 20px 0;
+	font-family: itc-avant-garde-gothic-pro, sans-serif;
+}
+
+.recent-description {
+	min-height: 40px;
+	text-align: center;
+	line-height: 140%;
+    margin: 0;
+	padding: 20px;
+	font-family: itc-avant-garde-gothic-pro, sans-serif;
+    font-size: 16px;
+    line-height: 160%;
+    color: #999;
+}
+
+.gm-style-iw-d {
+	overflow: hidden !important;
+}
