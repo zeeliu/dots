@@ -24,7 +24,7 @@ const makeUserProfile = templater(
 		<div class="profile-head">
 			<div class="user-profile-image">
 				<div class="pic">
-					${o.img ? `<img src="img/dots/icons/face${o.img}.svg" alt="">` : ''}
+					${o.img ? `<img src="${o.img}" alt="">` : ''}
 				</div>
 			</div>
 		</div>
