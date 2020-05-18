@@ -24,14 +24,14 @@ const makeUserProfile = templater(
 		<div class="profile-head">
 			<div class="user-profile-image">
 				<div class="pic">
-					<img src="${o.img}" alt="">
+					${o.img ? `<img src="${o.img}" alt="">` : ''}
 				</div>
 			</div>
 		</div>
-		<h1>${o.name}</h1>
-		<P>${o.gender}</P>
-		<p>${o.city}</p>
-		<p>${o.bio}</p>
+		<h1>${o.name || ''}</h1>
+		<P>${o.gender || ''}</P>
+		<p>${o.city || ''}</p>
+		<p>${o.bio || ''}</p>
 	`
 );
 
