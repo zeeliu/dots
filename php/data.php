@@ -130,7 +130,10 @@ function makeStatement($c,$t,$p) {
 				VALUES
 				(?,?,md5(?),?,NOW())
 				","ssss",$p);
-			return ["result"=>"success"];
+			// if ($r['error']) {
+			// 	return $r;
+			// }
+			return makeQuery($c, "SELECT LAST_INSERT_ID() as `id`", "", $p);
 
 
 

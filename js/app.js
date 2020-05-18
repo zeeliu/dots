@@ -59,6 +59,7 @@ $(() => {
 				],
 			}).then((d) => {
 				if (d.error) throw d.error;
+				sessionStorage.userId = d.result[0].id
 				$.mobile.navigate("#home-page");
 			});
 		})
