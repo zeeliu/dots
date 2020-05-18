@@ -1,6 +1,8 @@
 $(() => {
 	checkUserId();
+	// from https://api.jquerymobile.com/pagecontainer/#option-defaults
 	$.mobile.defaultPageTransition = 'none'
+
 	//Event Delegation
 	$(document)
 		//ROUTING
