@@ -1,6 +1,6 @@
 $(() => {
 	checkUserId();
-
+	$.mobile.defaultPageTransition = 'none'
 	//Event Delegation
 	$(document)
 		//ROUTING
