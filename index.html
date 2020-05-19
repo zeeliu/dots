@@ -38,19 +38,97 @@
 		<!-- Login / Sign up / Forget password Page */-->
 		<section data-role="page" id="login-page">
 			<div data-role="main" class="display-flex flex-vertical">
-				<div class="logo">
-					<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 418.72 140.16"><defs><style>.cls-1{fill:#ea573e;}.cls-2{fill:#f8d26c;}</style></defs><title>logo</title><circle class="cls-1" cx="196.51" cy="86.14" r="27.17"/><path class="cls-2" d="M127.64,67.39q0,33.15-18.13,50.64T57.87,135.51H10.44V0H55.3Q76,0,90.19,5.22t25,20.05Q127.64,42.67,127.64,67.39ZM93,67.94q0-17-8.15-27.29T60.07,30.4h-15v74.71H59.88q17,0,25.09-9.88T93,67.94Z"/><path class="cls-2" d="M236,46q15.66,15.39,15.66,38.64T236,123.24q-15.66,15.39-39.1,15.39t-39.1-15.39Q142.1,107.87,142.11,84.6T157.76,46q15.66-15.37,39.1-15.38T236,46Zm-21.7,56.68a26.85,26.85,0,0,0,0-36.07,23.72,23.72,0,0,0-34.8,0,26.88,26.88,0,0,0,0,36.07,23.72,23.72,0,0,0,34.8,0Z"/><path class="cls-2" d="M317.17,57H302.52v78.56h-30.4V57h-15V33.88h15V0h30.4V33.88h14.65Z"/><path class="cls-2" d="M406.54,104.38q0,16.31-12.27,25.46T365.15,139q-16.66,0-28.2-8.79t-13.18-24.9H354a10.42,10.42,0,0,0,3.85,7,12.32,12.32,0,0,0,7.69,2.38,13.42,13.42,0,0,0,7.23-2.11,6.48,6.48,0,0,0,3.39-5.77,8,8,0,0,0-.46-2.74,7.76,7.76,0,0,0-1.37-2.39,17.39,17.39,0,0,0-1.74-1.83,12,12,0,0,0-2.47-1.55c-1.1-.55-1.92-1-2.47-1.19s-1.47-.61-2.75-1.1-2.11-.79-2.47-.92q-8.79-2.92-13.19-4.58-24.17-8.79-24.17-26.55,0-15.19,11.81-24.36a43.73,43.73,0,0,1,27.56-9.15q15.93,0,26.74,8.24t12.27,23.81H373.58q-.19-7.7-9.52-7.7a10.28,10.28,0,0,0-6,1.84,5.71,5.71,0,0,0-2.65,4.94q0,3.66,3.75,6.23a28.38,28.38,0,0,0,9.43,3.93A123.73,123.73,0,0,1,381,75.45a93.06,93.06,0,0,1,12.37,5.4,24.89,24.89,0,0,1,9.43,9.06A26.92,26.92,0,0,1,406.54,104.38Z"/></svg>
-				</div>
 
-				<div class="flex-stretch"></div>
-				<div class="flex-none">
-					<form
-						id="login-form"
-						data-ajax="false"
-						style="padding: 1em;"
-					>
+				<div class="card">
+					<div class="logo">
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 418.72 140.16"><defs><style>.cls-1{fill:#ea573e;}.cls-2{fill:#f8d26c;}</style></defs><title>logo</title><circle class="cls-1" cx="196.51" cy="86.14" r="27.17"/><path class="cls-2" d="M127.64,67.39q0,33.15-18.13,50.64T57.87,135.51H10.44V0H55.3Q76,0,90.19,5.22t25,20.05Q127.64,42.67,127.64,67.39ZM93,67.94q0-17-8.15-27.29T60.07,30.4h-15v74.71H59.88q17,0,25.09-9.88T93,67.94Z"/><path class="cls-2" d="M236,46q15.66,15.39,15.66,38.64T236,123.24q-15.66,15.39-39.1,15.39t-39.1-15.39Q142.1,107.87,142.11,84.6T157.76,46q15.66-15.37,39.1-15.38T236,46Zm-21.7,56.68a26.85,26.85,0,0,0,0-36.07,23.72,23.72,0,0,0-34.8,0,26.88,26.88,0,0,0,0,36.07,23.72,23.72,0,0,0,34.8,0Z"/><path class="cls-2" d="M317.17,57H302.52v78.56h-30.4V57h-15V33.88h15V0h30.4V33.88h14.65Z"/><path class="cls-2" d="M406.54,104.38q0,16.31-12.27,25.46T365.15,139q-16.66,0-28.2-8.79t-13.18-24.9H354a10.42,10.42,0,0,0,3.85,7,12.32,12.32,0,0,0,7.69,2.38,13.42,13.42,0,0,0,7.23-2.11,6.48,6.48,0,0,0,3.39-5.77,8,8,0,0,0-.46-2.74,7.76,7.76,0,0,0-1.37-2.39,17.39,17.39,0,0,0-1.74-1.83,12,12,0,0,0-2.47-1.55c-1.1-.55-1.92-1-2.47-1.19s-1.47-.61-2.75-1.1-2.11-.79-2.47-.92q-8.79-2.92-13.19-4.58-24.17-8.79-24.17-26.55,0-15.19,11.81-24.36a43.73,43.73,0,0,1,27.56-9.15q15.93,0,26.74,8.24t12.27,23.81H373.58q-.19-7.7-9.52-7.7a10.28,10.28,0,0,0-6,1.84,5.71,5.71,0,0,0-2.65,4.94q0,3.66,3.75,6.23a28.38,28.38,0,0,0,9.43,3.93A123.73,123.73,0,0,1,381,75.45a93.06,93.06,0,0,1,12.37,5.4,24.89,24.89,0,0,1,9.43,9.06A26.92,26.92,0,0,1,406.54,104.38Z"/></svg>
+					</div>
+
+			
+					<div class="flex-stretch"></div>
+					<div class="flex-none">
+						<form
+							id="login-form"
+							data-ajax="false"
+							style="padding: 1em;"
+						>
+							<div class="form-control">
+								<label class="form-label" for="login-username"
+									>Username</label
+								>
+								<input
+									class="form-input"
+									type="text"
+									placeholder="Type your Username"
+									data-role="none"
+									id="login-username"
+								/>
+							</div>
+
+							<div class="form-control">
+								<label class="form-label" for="login-password"
+									>Password</label
+								>
+								<input
+									class="form-input"
+									type="password"
+									placeholder="Type your Password"
+									data-role="none"
+									id="login-password"
+								/>
+							</div>
+
+							<div class="form-control">
+								<input
+									type="submit"
+									class="form-button"
+									value="Login"
+									data-role="none"
+								/>
+							</div>
+
+							<div
+								class="form-control text-center"
+							>
+								<a href="#signup-page"><small>Sign Up</small></a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="bg-dots">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</section>
+
+		<section data-role="page" id="signup-page">
+			<div data-role="main">
+				<div class="card">
+					<form id="signup-form">
 						<div class="form-control">
-							<label class="form-label" for="login-username"
+							<label class="form-label" for="signup-name">
+								Name</label
+							>
+							<input
+								class="form-input"
+								type="text"
+								placeholder="Type your name"
+								data-role="none"
+								id="signup-name"
+							/>
+						</div>
+
+						<div class="form-control">
+							<label class="form-label" for="signup-username"
 								>Username</label
 							>
 							<input
@@ -58,12 +136,25 @@
 								type="text"
 								placeholder="Type your Username"
 								data-role="none"
-								id="login-username"
+								id="signup-username"
 							/>
 						</div>
 
 						<div class="form-control">
-							<label class="form-label" for="login-password"
+							<label class="form-label" for="signup-email">
+								Email</label
+							>
+							<input
+								class="form-input"
+								type="text"
+								placeholder="Type your email"
+								data-role="none"
+								id="signup-email"
+							/>
+						</div>
+
+						<div class="form-control">
+							<label class="form-label" for="signup-password"
 								>Password</label
 							>
 							<input
@@ -71,7 +162,20 @@
 								type="password"
 								placeholder="Type your Password"
 								data-role="none"
-								id="login-password"
+								id="signup-password"
+							/>
+						</div>
+
+						<div class="form-control">
+							<label class="form-label" for="signup-password2"
+								>Password Again</label
+							>
+							<input
+								class="form-input"
+								type="password"
+								placeholder="Type your Password"
+								data-role="none"
+								id="signup-password2"
 							/>
 						</div>
 
@@ -79,106 +183,31 @@
 							<input
 								type="submit"
 								class="form-button"
-								value="Login"
+								value="Signup"
 								data-role="none"
 							/>
 						</div>
 
 						<div
 							class="form-control text-center"
-							style="margin: 1em 0;"
+							
 						>
-							<a href="#signup-page"><small>Sign Up</small></a>
+							<a href="#login-page"><small>Login</small></a>
 						</div>
 					</form>
 				</div>
 			</div>
-		</section>
-
-		<section data-role="page" id="signup-page">
-			<div data-role="main">
-				<form id="signup-form">
-					<div class="form-control">
-						<label class="form-label" for="signup-name">
-							Name</label
-						>
-						<input
-							class="form-input"
-							type="text"
-							placeholder="Type your name"
-							data-role="none"
-							id="signup-name"
-						/>
-					</div>
-
-					<div class="form-control">
-						<label class="form-label" for="signup-username"
-							>Username</label
-						>
-						<input
-							class="form-input"
-							type="text"
-							placeholder="Type your Username"
-							data-role="none"
-							id="signup-username"
-						/>
-					</div>
-
-					<div class="form-control">
-						<label class="form-label" for="signup-email">
-							Email</label
-						>
-						<input
-							class="form-input"
-							type="text"
-							placeholder="Type your email"
-							data-role="none"
-							id="signup-email"
-						/>
-					</div>
-
-					<div class="form-control">
-						<label class="form-label" for="signup-password"
-							>Password</label
-						>
-						<input
-							class="form-input"
-							type="password"
-							placeholder="Type your Password"
-							data-role="none"
-							id="signup-password"
-						/>
-					</div>
-
-					<div class="form-control">
-						<label class="form-label" for="signup-password2"
-							>Password Again</label
-						>
-						<input
-							class="form-input"
-							type="password"
-							placeholder="Type your Password"
-							data-role="none"
-							id="signup-password2"
-						/>
-					</div>
-
-					<div class="form-control">
-						<input
-							type="submit"
-							class="form-button"
-							value="Signup"
-							data-role="none"
-						/>
-					</div>
-
-					<div
-						class="form-control text-center"
-						style="margin: 1em 0;"
-					>
-						<a href="#login-page"><small>Login</small></a>
-					</div>
-				</form>
+			<div class="bg-dots">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
 			</div>
 		</section>
 

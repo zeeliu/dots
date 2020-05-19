@@ -45,6 +45,10 @@ a {
 	text-decoration: none;
 }
 
+h4 {
+	margin-block-start: 0.7em;
+}
+
 button {
 	font-family: inherit;
 }
@@ -332,8 +336,25 @@ label {
 /*lOGIN & SIGNUP PAGE*/
 
 .logo {
-	width: 40%;
-	margin: auto;
+	width: 50%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 70px;
+}
+
+#login-page .card,
+#signup-page .card {    
+	position: relative;
+    width: 350px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 0;
+    min-height: 400px;
+}
+
+#signup-page [data-role="main"] {
+	flex: none;
 }
 
 #login-page img,
@@ -345,7 +366,8 @@ label {
 #login-page form input,
 #signup-page form input {
 	display: block;
-	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 #login-page .cta-button {
@@ -585,7 +607,7 @@ button img {
 
 .card {
 	box-shadow: 0px 4px 6px 0 rgba(0, 0, 0, 0.25);
-	width: 98%;
+	width: 100%;
 	bottom: 0;
 	position: absolute;
 	z-index: 2;
@@ -714,6 +736,7 @@ button {
 .profile-name-gender h1 {
 	font-weight: normal;
 	color: #444444;
+	margin-bottom: 0;
 }
 
 .profile-name-gender img {

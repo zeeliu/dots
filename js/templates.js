@@ -31,9 +31,9 @@ const makeUserProfile = templater(
 			<image src="${o.gender == 'male' ? 'img/male.svg' : 'img/female.svg'}"/>
 		</div>
 		<div class="profile-city">
-			<p>${o.city || ''}</p>
+			<h4>${o.city || ''}</h4>
 		</div>
-		<div class="bio">
+		<div class="bio" style="margin-top: 4em;">
 			<img src="img/bio-decor.png"/>
 			<p>${o.bio || ''}</p>
 			<img src="img/bio-decor.png"/>
@@ -83,7 +83,7 @@ const makeEditUserForm = (o) => {
 		<form id="edit-profile-form">
 			<div class="form-control">
 				<label for="name">Name</label>
-				<input type="text" placeholder="Name" id="edit-user-name" data-role="none" value="${o.name}">
+				<input type="text" placeholder="Name" id="edit-user-name" data-role="none" value="${o.name || ''}">
 			</div>
 				
 			<label for="gender">Gender</label>
@@ -94,12 +94,12 @@ const makeEditUserForm = (o) => {
 
 			<div class="form-control">
 				<label for="city">City</label>
-				<input type="text" placeholder="city" id="edit-user-city" data-role="none" value="${o.city}">
+				<input type="text" placeholder="city" id="edit-user-city" data-role="none" value="${o.city || ''}">
 			</div>
 
 			<div class="form-control">
 				<label for="bio">Bio</label>
-				<input type="text" placeholder="This is the description of a cat. He swag." id="edit-user-bio" data-role="none" value="${o.bio}">
+				<input type="text" placeholder="This is the description of a cat. He swag." id="edit-user-bio" data-role="none" value="${o.bio  || ''}">
 			</div>
 
 		</form>
