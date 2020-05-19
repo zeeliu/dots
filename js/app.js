@@ -313,7 +313,7 @@ $(() => {
 			upload(file).then((d) => {
 				if (d.error) throw d;
 				else {
-					const src = `https://zeeliu.com/aau/wnm617/omid/uploads/${d.result}`;
+					const src = `uploads/${d.result}`;
 					console.log('upload complete!',src)
 					console.log('saving image to user...')
 
