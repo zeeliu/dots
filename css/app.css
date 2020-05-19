@@ -132,6 +132,14 @@ button {
 	vertical-align: middle;
 }
 
+.nav-dot {
+	height: 15px;
+	width: 15px;
+	background-color: var(--color-orange-light);
+	border-radius: 50%;
+	display: inline-block;
+}
+
 .ui-header a,
 .ui-footer a {
 	display: block;
@@ -672,6 +680,11 @@ button {
 #mood-page .nav-tabs li.active {
 	background-color: var(--color-blue-light);
 	color: white;
+}
+
+.nav-icon img {
+	padding: 0;
+	margin: 0;
 }
 
 .profile-bottom {
