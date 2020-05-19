@@ -188,8 +188,10 @@
 			<div data-role="main">
 				<div class="map"></div>
 
-				<div class="nav-air">
-					<a href="#list-page" class="cta-button">Make a dot</a>
+				<div class="cta-wrap">
+					<div class="nav-air">
+						<a href="#list-page" class="cta-button">Make a dot</a>
+					</div>
 				</div>
 			</div>
 			<footer
@@ -210,10 +212,24 @@
 				</div>
 			</div>
 
-			<div class=" cta-button">
-				<a href="#addmood-page">Add mood</a>
+			<div class="cta-wrap">
+				<div class=" cta-button">
+					<a href="#addmood-page">Add mood</a>
+				</div>
 			</div>
 			<footer data-role="footer" data-template="#footer-nav-template"></footer>
+			<div class="bg-dots">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
 		</section>
 
 
@@ -360,12 +376,9 @@
 			
 
 			<div data-role="main">
-				<div class="card">
-					<div class="profile-body"></div>
-
-					<div class="cta-button">
-						<a href="#" class="js-logout ui-link">Log Out</a>
-					</div>
+				<div class="card"></div>
+				<div class="cta-button">
+					<a href="#" class="js-logout ui-link">Log Out</a>
 				</div>
 			</div>
 
@@ -373,6 +386,20 @@
 				data-role="footer"
 				data-template="#footer-nav-template"
 			></footer>
+
+			<div class="bg-dots">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+	
 		</section>
 
 		<!-- Profile edit page -->
@@ -409,23 +436,38 @@
 					</form>
 
 					<div class="edit-form"></div>
-
-					<div class="cta-button">
-						<a href="#" data-rel="back" class="js-edit-user">Done</a>
-					</div>
 					
 				</div>
+				<div class="cta-wrap">
+				<div class="cta-button">
+					<a href="#" data-rel="back" class="js-edit-user">Done</a>
+				</div>
+				</div>
+
 			</div>
+			<div class="bg-dots">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+
 		</section>
 
 		<script type="text/template" id="footer-nav-template">
 			<ul>
-				<li data-role="data-activateone"><a href="#home-page" class="active" >
-					<div class="nav-icon" class="home-nav"><img src="img/dots/icons/icon-09.svg" alt=""></div>
-				</a></li>
-
 				<li data-role="data-activateone"><a href="#list-page" >
 					<div class="nav-icon" class="list-nav"><img src="img/dots/icons/icon-08.svg" alt=""></div>
+				</a></li>
+
+				<li data-role="data-activateone"><a href="#home-page" class="active" >
+					<div class="nav-icon" class="home-nav"><img src="img/dots/icons/icon-09.svg" alt=""></div>
 				</a></li>
 
 				<li data-role="data-activateone"><a href="#profile-page" >

@@ -28,47 +28,7 @@ const showListPage = async () => {
 
 const showAddLocationPage = async () => {
 	const map_el = await makeMap("#addlocation-page .map");
-	
 	$("#addlocation-page .dot").css("background-color", sessionStorage.moodColor)
-	// const center = map_el.data("map").getCenter()
-	// $("#add-location-lat").val(center.lat());
-	// $("#add-location-lng").val(center.lng());
-
-	// $("#addlocation-page .cta-button").on("click", function(e) {
-	// 	const center = map_el.data("map").getCenter()
-	// 	setMarker(map_el, {
-	// 		lat: center.lat(),
-	// 		lng: center.lng(),
-	// 	}, 'blue')
-	// });
-
-	// let m = false;
-
-	// map_el.data("map").addListener("click", function (e) {
-	// 	let pos = {
-	// 		lat: e.latLng.lat(),
-	// 		lng: e.latLng.lng(),
-	// 	};
-
-	// 	if (m != false) m.setMap(null);
-
-	// 	$("#add-location-lat").val(pos.lat);
-	// 	$("#add-location-lng").val(pos.lng);
-
-	// 	const color = 'blue'
-	// 	m = new google.maps.Marker({
-	// 		position: pos,
-	// 		map: map_el.data("map"),
-	// 		icon: {
-	// 			path: google.maps.SymbolPath.CIRCLE,
-	// 			fillColor: color,
-	// 			strokeColor: color,
-	// 			fillOpacity: 1.0,
-	// 			scale: 7
-	// 		}
-	// 	});
-	// });
-
 	setMapBounds(map_el.data("map"), []);
 };
 
@@ -79,7 +39,7 @@ const showUserPage = async () => {
 	});
 	console.log(d);
 
-	$("#profile-page .profile-body").html(makeUserProfile(d.result));
+	$("#profile-page .card").html(makeUserProfile(d.result));
 };
 
 const showMoodPage = async () => {

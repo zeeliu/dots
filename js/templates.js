@@ -21,17 +21,23 @@ const makeChooseMoodList = templater(
 
 const makeUserProfile = templater(
 	(o) => `
-		<div class="profile-head">
-			<div class="user-profile-image">
-				<div class="pic">
-					${o.img ? `<img src="${o.img}" alt="">` : ''}
-				</div>
+		<div class="user-profile-image">
+			<div class="pic">
+				${o.img ? `<img src="${o.img}" alt="">` : ''}
 			</div>
 		</div>
-		<h1>${o.name || ''}</h1>
-		<P>${o.gender || ''}</P>
-		<p>${o.city || ''}</p>
-		<p>${o.bio || ''}</p>
+		<div class="profile-name-gender">
+			<h1>${o.name || ''}</h1>
+			<image src="${o.gender == 'male' ? 'img/male.svg' : 'img/female.svg'}"/>
+		</div>
+		<div class="profile-city">
+			<p>${o.city || ''}</p>
+		</div>
+		<div class="bio">
+			<img src="img/bio-decor.png"/>
+			<p>${o.bio || ''}</p>
+			<img src="img/bio-decor.png"/>
+		</div>
 	`
 );
 

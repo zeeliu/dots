@@ -3,6 +3,24 @@ $(() => {
 	// from https://api.jquerymobile.com/pagecontainer/#option-defaults
 	$.mobile.defaultPageTransition = 'none'
 
+	// 
+	// $('section').each((s,o) => {
+	// 	$(o).append(`
+	// 		<div id="bg-dots">
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 		</div>
+	// 	`)
+	// })
+
 	//Event Delegation
 	$(document)
 		//ROUTING
