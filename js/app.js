@@ -130,11 +130,6 @@ $(() => {
 			const map_el = await makeMap("#addlocation-page .map");
 			console.log({map_el})
 			const center = map_el.data("map").getCenter();
-			// const color = sessionStorage.moodColor;
-			// setMarker(map_el, {
-			// 	lat: center.lat(),
-			// 	lng: center.lng(),
-			// }, color)
 
 			query({
 				type: "insert_location",
