@@ -33,6 +33,9 @@ $(() => {
 				case "addlocation-page":
 					showAddLocationPage();
 					break;
+				case "addnew-page":
+					showAddNewPage();
+					break;
 				case "list-page":
 					showListPage();
 					break;
@@ -160,7 +163,7 @@ $(() => {
 			}
 		})
 
-		.on("click", "#list-page .moodlist li", function (e) {
+		.on("click", "#list-page .moodlist li, #addnew-page .moodlist li", function (e) {
 			if ($(this).data("id") === undefined) {
 				throw "No id defined on this element";
 			}
@@ -237,7 +240,7 @@ $(() => {
 
 		.on("click", "#home-page .cta-button", function (e) {
 			sessionStorage.clickType = "make-dot";
-			$.mobile.navigate("#list-page");
+			$.mobile.navigate("#addnew-page");
 		})
 
 		.on("click", "footer a", function (e) {
@@ -310,7 +313,7 @@ $(() => {
 			upload(file).then((d) => {
 				if (d.error) throw d;
 				else {
-					const src = `https://zeeliu.com/aau/wnm617/omid/uploads/${d.result}`;
+					const src = `uploads/${d.result}`;
 					console.log('upload complete!',src)
 					console.log('saving image to user...')
 

@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -190,7 +190,7 @@
 
 				<div class="cta-wrap">
 					<div class="nav-air">
-						<a href="#list-page" class="cta-button">Make a dot</a>
+						<a href="#addnew-page" class="cta-button">Make a dot</a>
 					</div>
 				</div>
 			</div>
@@ -262,7 +262,44 @@
 		</div>
 	</section>
 
+		<!-- Add new page -->
 
+	<section data-role="page" id="addnew-page">
+		<header data-role="header" class="ui-header ui-bar-inherit">
+			<div class="icon back">
+				<a href="#" data-rel="back">
+					<i class="fas fa-chevron-left"></i>
+				</a>
+			</div>
+		</header>
+
+		<div data-role="main">
+			<div class="scrollable">
+				<div class="no-moods"></div>
+				<ul class="moodlist"></ul>
+			</div>
+		</div>
+
+		<div class="cta-wrap">
+			<div class=" cta-button">
+				<a href="#addmood-page">Add mood</a>
+			</div>
+		</div>
+
+		<div class="bg-dots">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+
+	</section>
 
 		<!-- Add mood page -->
 
@@ -459,17 +496,25 @@
 
 		<script type="text/template" id="footer-nav-template">
 			<ul>
-				<li data-role="data-activateone"><a href="#list-page" >
-					<div class="nav-icon" class="list-nav"><img src="img/dots/icons/icon-08.svg" alt=""></div>
+				<li><a href="#list-page">
+					<div class="nav-icon list-nav">
+						<img src="img/dots/icons/icon-08.svg" alt="">
+						<div class="nav-dot"></div>
+					</div>
 				</a></li>
 
-				<li data-role="data-activateone"><a href="#home-page" class="active" >
-					<div class="nav-icon" class="home-nav"><img src="img/dots/icons/icon-09.svg" alt=""></div>
+				<li><a href="#home-page">
+					<div class="nav-icon home-nav">
+						<img src="img/dots/icons/icon-09.svg" alt="">
+						<div class="nav-dot"></div>
+					</div>
 				</a></li>
 
-				<li data-role="data-activateone"><a href="#profile-page" >
-					<div class="nav-icon" class="profile-nav"><img src="img/dots/icons/icon-07.svg" alt=""></div>
-
+				<li><a href="#profile-page">
+					<div class="nav-icon profile-nav">
+						<img src="img/dots/icons/icon-07.svg" alt="">
+						<div class="nav-dot"></div>
+					</div>
 				</a></li>
 			</ul>
 		</script>
