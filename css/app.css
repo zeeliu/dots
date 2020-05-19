@@ -946,7 +946,8 @@ footer .active:second-child{
     padding: 10px;
     font-size: 16px;
     text-align: center;
-    border-bottom: 1px solid;
+	border-bottom: 1px solid;
+	outline: 0;
 }
 
 #profile-edit-page .form-control {
