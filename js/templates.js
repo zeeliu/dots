@@ -5,6 +5,7 @@ const makeMoodList = templater(
 	(o) => `
 		<li class="mood-jump" data-id="${o.id}">
 			<img src="img/dots/icons/face${o.img}.svg" style="background-color: ${o.bgc}">
+			<div class="mood-list-name">${o.name}</div>
 		</li>
 	`
 );
