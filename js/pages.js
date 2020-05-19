@@ -11,6 +11,21 @@ const MOOD_COLORS = [
 	'#37BA9A',
 ]
 
+const showAddNewPage = async () => {
+	let d = await query({
+		type: "moods_from_user",
+		params: [sessionStorage.userId],
+	});
+	console.log(d);
+
+	if (d.result.length === 0) {
+		$("#addnew-page .no-moods").show().html("You don't have any moods! Click add mood below to create a new mood.");
+	} else {
+		$("#addnew-page .no-moods").hide();
+		$("#addnew-page .moodlist").html(makeMoodList(d.result));
+	}
+};
+
 const showListPage = async () => {
 	let d = await query({
 		type: "moods_from_user",

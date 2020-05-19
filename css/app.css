@@ -492,6 +492,7 @@ button img {
 
 /*LIST PAGE*/
 
+#addnew-page .no-moods,
 #list-page .no-moods {
 	width: 100%;
 	height: 100%;
@@ -502,10 +503,12 @@ button img {
 	padding: 50px 50px 0 50px;
 }
 
+#addnew-page [data-role="main"] img,
 #list-page [data-role="main"] img {
 	padding: 0;
 }
 
+#addnew-page .moodlist,
 #list-page .moodlist {
 	list-style: none;
 	padding-inline-start: 0px;
@@ -513,20 +516,32 @@ button img {
 	flex-wrap: wrap;
 }
 
+#addnew-page .cta-wrap {
+	padding: 0 20px 40px 20px;
+}
 #list-page .cta-wrap {
 	padding: 0 20px 80px 20px;
 }
 
+#addnew-page img,
 #list-page img {
 	width: 100%;
 }
 
+#addnew-page .icon.back {
+	color: #333;
+	top: 0;
+	left: 0;
+}
+
+#addnew-page .moodlist li,
 #list-page .moodlist li {
 	width: 50%;
 	display: inline;
 	line-height: 0;
 }
 
+#addnew-page .circle,
 #list-page .circle {
 	display: block;
 	background-color: white;
@@ -542,6 +557,7 @@ button img {
 	z-index: 2;
 }
 
+#addnew-page .bg-dots,
 #list-page .bg-dots {
 	z-index: -1;
 	opacity: 0.25;
