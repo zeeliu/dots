@@ -130,7 +130,10 @@ function makeStatement($c,$t,$p) {
 				VALUES
 				(?,?,md5(?),?,NOW())
 				","ssss",$p);
-			return ["result"=>"success"];
+			// if ($r['error']) {
+			// 	return $r;
+			// }
+			return makeQuery($c, "SELECT LAST_INSERT_ID() as `id`", "", $p);
 
 
 
@@ -150,7 +153,7 @@ function makeStatement($c,$t,$p) {
 				VALUES
 				(?,?,?,?,?,?,'https://via.placeholder.com/100/888/fff/?text=ICON',NOW())
 				","iddiis",$p);
-			return ["result"=>"success"];
+			return ["result"=>$r];
 
 
 
@@ -182,9 +185,11 @@ function makeStatement($c,$t,$p) {
 				`track_moods`
 				SET
 					`name`=?,
-					`description`=?
+					`bgc`=?,
+					`description`=?,
+					`img`=?
 				WHERE id=?
-				","ssi",$p);
+				","sssss",$p);
 			return ["result"=>"success"];
 
 

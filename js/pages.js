@@ -19,53 +19,16 @@ const showListPage = async () => {
 	console.log(d);
 
 	if (d.result.length === 0) {
-		$("#list-page .no-moods").show();
+		$("#list-page .no-moods").show().html("You don't have any moods! Click add mood below to create a new mood.");
 	} else {
 		$("#list-page .no-moods").hide();
 		$("#list-page .moodlist").html(makeMoodList(d.result));
 	}
-
-	$("#list-page .moodlist li").on("click", function (e) {
-		if ($(this).data("id") === undefined) {
-			throw "No id defined on this element";
-		}
-		sessionStorage.moodId = $(this).data("id");
-		$.mobile.navigate("#mood-page");
-	});
-};
-
-const chooseListPage = async () => {
-	let d = await query({
-		type: "moods_from_user",
-		params: [sessionStorage.userId],
-	});
-	console.log(d);
-
-	$("#addnew-page .moodlist").html(makeChooseMoodList(d.result));
 };
 
 const showAddLocationPage = async () => {
-	let map_el = await makeMap("#addlocation-page .map");
-
-	let m = false;
-
-	map_el.data("map").addListener("click", function (e) {
-		let pos = {
-			lat: e.latLng.lat(),
-			lng: e.latLng.lng(),
-		};
-
-		if (m != false) m.setMap(null);
-
-		$("#add-location-lat").val(pos.lat);
-		$("#add-location-lng").val(pos.lng);
-
-		m = new google.maps.Marker({
-			position: pos,
-			map: map_el.data("map"),
-		});
-	});
-
+	const map_el = await makeMap("#addlocation-page .map");
+	$("#addlocation-page .dot").css("background-color", sessionStorage.moodColor)
 	setMapBounds(map_el.data("map"), []);
 };
 
@@ -76,7 +39,7 @@ const showUserPage = async () => {
 	});
 	console.log(d);
 
-	$("#profile-page .profile-body").html(makeUserProfile(d.result));
+	$("#profile-page .card").html(makeUserProfile(d.result));
 };
 
 const showMoodPage = async () => {
@@ -90,6 +53,7 @@ const showMoodPage = async () => {
 		params: [sessionStorage.moodId],
 	}).then((d) => {
 		console.log(d);
+		sessionStorage.moodColor = d.result[0].bgc
 		$("#mood-page .profile-image").html(makeMoodImage(d.result));		
 		$("#mood-page .profile-content").html(makeMoodProfile(d.result));
 		return d
@@ -119,21 +83,15 @@ const showHomePage = async () => {
 		if (o.lat) r.push(o);
 		return r;
 	}, []);
-	console.log(moods);
-
+	console.log({moods}, {res:d.result});
 
 	let map_el = await makeMap("#home-page .map");
 
 	makeMarkers(map_el, moods);
-
+	if (!map_el.data("markers")) return;
+	
 	map_el.data("markers").forEach((o, i) => {
 		o.addListener("click", function (e) {
-			// example 1
-			/*			$("#home-page .basin")
-				.addClass("active")
-				.html(makeHomeWindow(moods[i]));*/
-
-			// example 2
 			console.log(moods[i]);
 			map_el.data("infoWindow").open(map_el.data("map"), o);
 			map_el.data("infoWindow").setContent(makeHomeWindow(moods[i]));
@@ -148,11 +106,21 @@ const showProfileEditPage = async () => {
 	});
 	console.log('got user',d)
 	const img = d.result[0].img
+
+	$("#profile-edit-page .pic .loading").hide();
 	if (img) {
-		$("#profile-edit-page .pic .loading").hide();
 		$("#profile-edit-page .pic img").attr('src', img).show();
 	}
 	$("#profile-edit-page .edit-form").html(makeEditUserForm(d.result[0]));
+
+	const gender = d.result[0].gender;
+	if (gender) {
+		const genderEl = $(`#edit-profile-form .genders .${gender}`)
+		genderEl.addClass("active");
+		genderEl.siblings().removeClass("active");
+		sessionStorage.gender = gender;
+	}
+
 };
 
 const showAddMoodPage = async () => {
@@ -174,6 +142,5 @@ const showMoodEditPage = async () => {
 	$("#moodedit-page img")
 		.css({ "background-color": d.result[0].bgc })
 		.attr("src", `img/dots/icons/face${d.result[0].img}.svg`)
-	$(`#addmood-page .bg-color[data-color|='${d.result[0].bgc}']`).addClass('selected');
-
+	$(`#moodedit-page .bg-color[data-color|='${d.result[0].bgc}']`).addClass('selected');
 };

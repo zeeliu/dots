@@ -32,6 +32,26 @@ const makeMap = async (target) =>{
 }
 
 
+const setMarker = (map_el, loc, color) => {
+  if (!loc.lat || !loc.lng) return;
+  const map = map_el.data("map");
+  const marker = new google.maps.Marker({
+    position: loc,
+    map: map,
+    icon: {
+      path: google.maps.SymbolPath.CIRCLE,
+      fillColor: color,
+      strokeColor: color,
+      fillOpacity: 1.0,
+      scale: 7
+    }
+  })
+
+  const markers = map_el.data("markers") || []
+  markers.push(marker)
+  map_el.data("markers", markers)
+}
+
 const makeMarkers = (map_el,locs,color) => {
 
 	let map = map_el.data("map");
@@ -39,31 +59,26 @@ const makeMarkers = (map_el,locs,color) => {
 
 	if(markers) markers.forEach(o=>o.setMap(null));
 
-	markers = [];
+	// markers = [];
 
-	locs.forEach((o,i,a)=>{
-		if(!o.lat) return;
-		let m = new google.maps.Marker({
-			position: o,
-			map: map,
-			icon: {
-        // url:o.icon,
-        path: google.maps.SymbolPath.CIRCLE,
-        fillColor: color,
-        strokeColor: color,
-        fillOpacity: 1.0,
-        // fillColor: 'yellow',//color,
-        scale: 7
-				// scaledSize: {
-				// 	width:30,
-				// 	height:30
-				// }
-			}
-		});
-		markers.push(m);
+	locs.forEach((loc)=>{
+    setMarker(map_el, loc, color || loc.bgc)
+		// if(!loc.lat) return;
+		// let m = new google.maps.Marker({
+		// 	position: loc,
+		// 	map: map,
+		// 	icon: {
+    //     path: google.maps.SymbolPath.CIRCLE,
+    //     fillColor: color,
+    //     strokeColor: color,
+    //     fillOpacity: 1.0,
+    //     scale: 7
+		// 	}
+		// });
+		// markers.push(m);
 	});
 
-	map_el.data("markers",markers);
+	// map_el.data("markers",markers);
 
 	setTimeout(()=>{setMapBounds(map,locs)},100);
 }

@@ -1,5 +1,25 @@
 $(() => {
 	checkUserId();
+	// from https://api.jquerymobile.com/pagecontainer/#option-defaults
+	$.mobile.defaultPageTransition = 'none'
+
+	// 
+	// $('section').each((s,o) => {
+	// 	$(o).append(`
+	// 		<div id="bg-dots">
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 			<div></div>
+	// 		</div>
+	// 	`)
+	// })
 
 	//Event Delegation
 	$(document)
@@ -59,6 +79,7 @@ $(() => {
 				],
 			}).then((d) => {
 				if (d.error) throw d.error;
+				sessionStorage.userId = d.result[0].id
 				$.mobile.navigate("#home-page");
 			});
 		})
@@ -99,12 +120,70 @@ $(() => {
 
 	// https://codepen.io/bronkula/pen/yPBbWY
 
+		.on("click", "#edit-profile-form .genders div", function(e) {
+			const gender = $(this).attr("class");
+			$(this).addClass("active");
+			$(this).siblings().removeClass("active");
+			sessionStorage.gender = gender;
+		})
+		.on("click", "#addlocation-page .cta-button", async function(e) {
+			const map_el = await makeMap("#addlocation-page .map");
+			console.log({map_el})
+			const center = map_el.data("map").getCenter();
+
+			query({
+				type: "insert_location",
+				params: [
+					sessionStorage.moodId,
+					center.lat(),
+					center.lng(),
+					1,
+					0,
+					$("#addlocation-page textarea").val(),
+				],
+			}).then((d) => {
+				if (d.error) throw d.error;
+				console.log(d)
+				sessionStorage.removeItem("clickType");
+				$.mobile.navigate("#home-page");
+			});
+		})
+		
+		.on("click", "#addlocation-page .back", function (e) {
+			if (sessionStorage.clickType == "make-dot") {
+				$.mobile.navigate("#list-page");
+			} else {
+				$.mobile.navigate("#mood-page");
+			}
+		})
+
 		.on("click", "#list-page .moodlist li", function (e) {
 			if ($(this).data("id") === undefined) {
 				throw "No id defined on this element";
 			}
 			sessionStorage.moodId = $(this).data("id");
-			$.mobile.navigate("#mood-page");
+			if (sessionStorage.clickType == "make-dot") {
+				$.mobile.navigate("#addlocation-page");
+			} else {
+				$.mobile.navigate("#mood-page");
+			}
+		})
+
+		.on("click", "#moodedit-page .cta-button", function(e) {
+			query({
+				type: "edit_mood",
+				params: [
+					$("#moodedit-page .mood-name").val(),
+					$("#moodedit-page .bg-color.selected").attr("data-color"),
+					$("#moodedit-page .description").val(),
+					$("#moodedit-page [data-imgid]").attr("data-imgid"),
+					sessionStorage.moodId,
+				],
+			}).then((d) => {
+				if (d.error) throw d.error;
+				console.log(d)
+				$.mobile.navigate("#mood-page");
+			});
 		})
 
 		.on("click", "#addmood-page .cta-button", function(e) {
@@ -153,46 +232,30 @@ $(() => {
 			img.attr("data-imgId", id).attr("src", `img/dots/icons/face${id}.svg`);
 		})
 
-		.on("click", ".js-addlocation", function (e) {
-			query({
-				type: "insert_location",
-				params: [
-					sessionStorage.moodId,
-					$("#add-location-lat").val(),
-					$("#add-location-lng").val(),
-					$("#add-location-description").val(),
-				],
-			}).then((d) => {
-				if (d.error) throw d.error;
-				$.mobile.navigate("#home-page");
-			});
+		.on("click", "#home-page .cta-button", function (e) {
+			sessionStorage.clickType = "make-dot";
+			$.mobile.navigate("#list-page");
+		})
+
+		.on("click", "footer a", function (e) {
+			sessionStorage.removeItem('clickType')
 		})
 
 		.on("click", ".js-edit-user", function (e) {
+			const gender = sessionStorage.gender;
+			sessionStorage.removeItem("gender");
 			query({
 				type: "edit_user",
 				params: [
 					$("#edit-user-name").val(),
-					$("#edit-user-gender").val(),
+					gender,
 					$("#edit-user-city").val(),
 					$("#edit-user-bio").val(),
 					sessionStorage.userId,
 				],
 			}).then((d) => {
 				if (d.error) throw d.error;
-			});
-		})
-
-		.on("click", ".js-edit-mood", function (e) {
-			query({
-				type: "edit_mood",
-				params: [
-					$("#moodedit-page #edit-mood-name").val(),
-					$("#edit-mood-description").val(),
-					sessionStorage.moodId,
-				],
-			}).then((d) => {
-				if (d.error) throw d.error;
+				$.mobile.navigate("#profile-page");
 			});
 		})
 
@@ -261,6 +324,7 @@ $(() => {
 						$("#profile-edit-page .pic img")
 							.attr('src', src)
 							.css('opacity', '1')
+							.show();
 					});
 				}
 			});
