@@ -523,10 +523,6 @@ button img {
 	padding: 0 20px 80px 20px;
 }
 
-#addnew-page img,
-#list-page img {
-	width: 100%;
-}
 
 #addnew-page .icon.back {
 	color: #333;
@@ -1259,4 +1255,16 @@ footer .active:second-child{
 }
 #profile-page p {
 	margin-top: 0;
+}
+
+.nav-dot {
+	height: 15px;
+	width: 15px;
+	background-color: var(--color-orange-light);
+	border-radius: 50%;
+	display: inline-block;
+}
+.nav-icon img {
+	padding: 0;
+	margin: 0;
 }

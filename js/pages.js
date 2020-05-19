@@ -27,13 +27,15 @@ const showAddNewPage = async () => {
 };
 
 const showListPage = async () => {
+	$("#list-page .home-nav .nav-dot").hide();
+	$("#list-page .list-nav .nav-dot").show();
+	$("#list-page .profile-nav .nav-dot").hide();
+
 	let d = await query({
 		type: "moods_from_user",
 		params: [sessionStorage.userId],
 	});
 	console.log(d);
-
-
 
 	if (d.result.length === 0) {
 		$("#list-page .no-moods").show().html("You don't have any moods! Click add mood below to create a new mood.");
@@ -50,15 +52,17 @@ const showAddLocationPage = async () => {
 };
 
 const showUserPage = async () => {
+	$("#profile-page .home-nav .nav-dot").hide();
+	$("#profile-page .list-nav .nav-dot").hide();
+	$("#profile-page .profile-nav .nav-dot").show();
+
 	let d = await query({
 		type: "user_by_id",
 		params: [sessionStorage.userId],
 	});
 	console.log(d);
 
-
 	$("#profile-page .card").html(makeUserProfile(d.result));
-
 };
 
 const showMoodPage = async () => {
@@ -90,14 +94,16 @@ const showMoodPage = async () => {
 };
 
 const showHomePage = async () => {
+	$("#home-page .home-nav .nav-dot").show();
+	$("#home-page .list-nav .nav-dot").hide();
+	$("#home-page .profile-nav .nav-dot").hide();
+
 	let d = await query({
 		type: "recent_moods_locations",
 		params: [sessionStorage.userId],
 	});
 
 	console.log(d);
-
-    
 
 	let moods = d.result.reduce((r, o) => {
 		o.icon = `img/dots/icons/${o.name}.svg`;
