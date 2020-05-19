@@ -120,6 +120,12 @@ $(() => {
 
 	// https://codepen.io/bronkula/pen/yPBbWY
 
+		.on("click", "#edit-profile-form .genders div", function(e) {
+			const gender = $(this).attr("class");
+			$(this).addClass("active");
+			$(this).siblings().removeClass("active");
+			sessionStorage.gender = gender;
+		})
 		.on("click", "#addlocation-page .cta-button", async function(e) {
 			const map_el = await makeMap("#addlocation-page .map");
 			console.log({map_el})
@@ -234,17 +240,20 @@ $(() => {
 		// })
 
 		.on("click", ".js-edit-user", function (e) {
+			const gender = sessionStorage.gender;
+			sessionStorage.removeItem("gender");
 			query({
 				type: "edit_user",
 				params: [
 					$("#edit-user-name").val(),
-					$("#edit-user-gender").val(),
+					gender,
 					$("#edit-user-city").val(),
 					$("#edit-user-bio").val(),
 					sessionStorage.userId,
 				],
 			}).then((d) => {
 				if (d.error) throw d.error;
+				$.mobile.navigate("#profile-page");
 			});
 		})
 

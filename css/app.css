@@ -827,6 +827,43 @@ footer .active:second-child{
 
 /*USER PROFILE PAGE*/
 
+#profile-edit-page .genders {
+	width: 100%;
+    display: flex;
+    border: 0;
+    justify-content: center;
+}
+#profile-edit-page .genders div {
+	width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid;
+	border-radius: 50%;
+	font-weight: bold;
+}
+#profile-edit-page .genders .male {
+	margin-right: 10px;
+}
+#profile-edit-page .genders .male:not(.active) {
+	border-color: var(--color-blue-light);
+	color: var(--color-blue-light);
+}
+#profile-edit-page .genders .male.active {
+	background-color: var(--color-blue-light);
+	border-color: var(--color-blue-light);
+	color: #fff;
+}
+#profile-edit-page .genders .female:not(.active) {
+	border-color: rgb(255, 0, 128);
+	color: rgb(255, 0, 128);
+}
+#profile-edit-page .genders .female.active {
+	background-color: rgb(255, 0, 128);
+	border-color: rgb(255, 0, 128);
+	color: #fff
+}
 #profile-edit-page .cta-wrap {
 	margin: 20px 0;
 }

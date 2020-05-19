@@ -106,11 +106,21 @@ const showProfileEditPage = async () => {
 	});
 	console.log('got user',d)
 	const img = d.result[0].img
+
 	$("#profile-edit-page .pic .loading").hide();
 	if (img) {
 		$("#profile-edit-page .pic img").attr('src', img).show();
 	}
 	$("#profile-edit-page .edit-form").html(makeEditUserForm(d.result[0]));
+
+	const gender = d.result[0].gender;
+	if (gender) {
+		const genderEl = $(`#edit-profile-form .genders .${gender}`)
+		genderEl.addClass("active");
+		genderEl.siblings().removeClass("active");
+		sessionStorage.gender = gender;
+	}
+
 };
 
 const showAddMoodPage = async () => {

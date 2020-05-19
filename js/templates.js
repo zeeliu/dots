@@ -80,18 +80,16 @@ const makeHomeWindow = templater(
 
 const makeEditUserForm = (o) => {
 	return `
-		<form>
+		<form id="edit-profile-form">
 			<div class="form-control">
 				<label for="name">Name</label>
 				<input type="text" placeholder="Name" id="edit-user-name" data-role="none" value="${o.name}">
 			</div>
 				
-			<div class="form-control">
-				<label for="gender">Gender</label>
-				<select class="form-button" id="edit-user-gender" data-role="none">
-					<option value="female">female</option>
-					<option value="male">male</option>
-				</select>
+			<label for="gender">Gender</label>
+			<div class="genders">
+				<div class="male ${o.gender == 'male' ? 'active' : ''}">M</div>
+				<div class="female ${o.gender == 'female' ? 'active' : ''}">F</div>
 			</div>
 
 			<div class="form-control">
