@@ -18,9 +18,7 @@ const showListPage = async () => {
 	});
 	console.log(d);
 
-	$("#list-page .home-nav .nav-dot").hide();
-    $("#list-page .list-nav .nav-dot").show();
-    $("#list-page .profile-nav .nav-dot").hide();
+
 
 	if (d.result.length === 0) {
 		$("#list-page .no-moods").show();
@@ -80,9 +78,6 @@ const showUserPage = async () => {
 	});
 	console.log(d);
 
-	$("#profile-page .home-nav .nav-dot").hide();
-    $("#profile-page .list-nav .nav-dot").hide();
-    $("#profile-page .profile-nav .nav-dot").show();
 
 	$("#profile-page .profile-body").html(makeUserProfile(d.result));
 };
@@ -122,17 +117,6 @@ const showHomePage = async () => {
 
 	console.log(d);
 
-
-		// NAV ACTIVE STATE
-
-		
-	
-
-    $("#home-page .home-nav .nav-dot").show();
-    $("#home-page .list-nav .nav-dot").hide();
-    $("#home-page .profile-nav .nav-dot").hide();
-
-        
     
 
 	let moods = d.result.reduce((r, o) => {
