@@ -232,24 +232,13 @@ $(() => {
 			img.attr("data-imgId", id).attr("src", `img/dots/icons/face${id}.svg`);
 		})
 
-		// .on("click", ".js-addlocation", function (e) {
-		// 	query({
-		// 		type: "insert_location",
-		// 		params: [
-		// 			sessionStorage.moodId,
-		// 			$("#add-location-lat").val(),
-		// 			$("#add-location-lng").val(),
-		// 			$("#add-location-description").val(),
-		// 		],
-		// 	}).then((d) => {
-		// 		if (d.error) throw d.error;
-		// 		$.mobile.navigate("#home-page");
-		// 	});
-		// })
-
 		.on("click", "#home-page .cta-button", function (e) {
 			sessionStorage.clickType = "make-dot";
 			$.mobile.navigate("#list-page");
+		})
+
+		.on("click", "footer a", function (e) {
+			sessionStorage.removeItem('clickType')
 		})
 
 		.on("click", ".js-edit-user", function (e) {

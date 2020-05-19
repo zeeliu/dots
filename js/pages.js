@@ -19,7 +19,7 @@ const showListPage = async () => {
 	console.log(d);
 
 	if (d.result.length === 0) {
-		$("#list-page .no-moods").show();
+		$("#list-page .no-moods").show().html("You don't have any moods! Click add mood below to create a new mood.");
 	} else {
 		$("#list-page .no-moods").hide();
 		$("#list-page .moodlist").html(makeMoodList(d.result));
