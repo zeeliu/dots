@@ -144,8 +144,17 @@ $(() => {
 			}).then((d) => {
 				if (d.error) throw d.error;
 				console.log(d)
+				sessionStorage.removeItem("clickType");
 				$.mobile.navigate("#home-page");
 			});
+		})
+		
+		.on("click", "#addlocation-page .back", function (e) {
+			if (sessionStorage.clickType == "make-dot") {
+				$.mobile.navigate("#list-page");
+			} else {
+				$.mobile.navigate("#mood-page");
+			}
 		})
 
 		.on("click", "#list-page .moodlist li", function (e) {
@@ -154,7 +163,6 @@ $(() => {
 			}
 			sessionStorage.moodId = $(this).data("id");
 			if (sessionStorage.clickType == "make-dot") {
-				sessionStorage.removeItem("clickType");
 				$.mobile.navigate("#addlocation-page");
 			} else {
 				$.mobile.navigate("#mood-page");
