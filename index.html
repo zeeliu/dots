@@ -21,7 +21,6 @@
 		<script src="js/pages.js"></script>
 		<script src="js/maps.js"></script>
 		<script src="js/app.js"></script>
-		<script src="js/facepicker.js"></script>
 		<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 		<script
 			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbjzieb97H4D0oIQf7eim5Uv4KE5Ql1Xk"
@@ -189,8 +188,10 @@
 			<div data-role="main">
 				<div class="map"></div>
 
-				<div class="nav-air">
-					<a href="#addnew-page" class="cta-button">Make a dot</a>
+				<div class="cta-wrap">
+					<div class="nav-air">
+						<a href="#list-page" class="cta-button">Make a dot</a>
+					</div>
 				</div>
 			</div>
 			<footer
@@ -199,58 +200,35 @@
 			></footer>
 		</section>
 
-		<!-- Add new page -->
-
-		<section data-role="page" id="addnew-page">
-			<header data-role="header" class="ui-header ui-bar-inherit">
-				<div class="icon back">
-					<a href="#" data-rel="back">
-						<i class="fas fa-chevron-left"></i>
-					</a>
-				</div>
-			</header>
-
-			<div data-role="main">
-				<div class="scrollable">
-					<div class="no-moods">
-						You don't have any moods! Click add mood below to create a new mood.
-					</div>
-					<ul class="moodlist"></ul>
-				</div>
-			</div>
-			<!--<div data-role="main">
-						<img src="img/dots/graphics/mood-10.svg">
-						<form>
-							<input type="text" placeholder="Mood Name" data-role="none">
-							<input type="text" placeholder="This is the description of the mood, of the cat. He swag." data-role="none">
-
-						</form>-->
-			<div class=" cta-button">
-				<a href="#addmood-page">Add mood</a>
-			</div>
-
-		</section>
-
 		<!-- List Page -->
 
 		<section data-role="page" id="list-page">
 			<div data-role="main">
 				<div class="scrollable">
+					<div class="no-moods"></div>
 					<ul class="moodlist"></ul>
-
 				</div>
-
 			</div>
 
-			<div class=" cta-button">
-				<a href="#addmood-page">Add mood</a>
+			<div class="cta-wrap">
+				<div class=" cta-button">
+					<a href="#addmood-page">Add mood</a>
+				</div>
 			</div>
-
-
-
-		<footer data-role="footer" data-template="#footer-nav-template"></footer>
-
-	</section>
+			<footer data-role="footer" data-template="#footer-nav-template"></footer>
+			<div class="bg-dots">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</section>
 
 
 	
@@ -258,12 +236,9 @@
 	<section data-role="page" id="mood-page">
 		<div class="scrollable">
 			<div class="icon back">
-				<a href="#" data-rel="back">
+				<a href="#list-page">
 					<i class="fas fa-chevron-left"></i>
 				</a>
-			</div>
-			<div class="icon delete js-delete-mood">
-				<i class="fas fa-trash-alt"></i>
 			</div>
 			<div class="profile-image"></div>
 			<nav class="profile-nav nav-tabs">
@@ -298,17 +273,15 @@
 				</a>
 			</div>
 			<div class="profile-image">
-				<div class="left"></div>
-				<div class="right"></div>
+				<div class="left">◀</div>
+				<div class="right">▶</div>
 				<img data-imgId="1" src="img/dots/icons/face1.svg"/>
 			</div>
 			<div data-role="main">
 				<div class="edit-form">
 					<div class="choose-bg"></div>
 				</div>
-				<div class="cta-button">
-					<a href="#" data-rel="back" class="js-edit-mood">Done</a>
-				</div>
+				<div class="cta-button">Done</div>
 			</div>
 		</section>
 
@@ -322,18 +295,19 @@
 					<i class="fas fa-chevron-left"></i>
 				</a>
 			</div>
-			<div class="profile-image">
-				<img class="img" src="">
-				<input type="hidden" id="face-choice">
-				  <div class="face-choose right">▶</div>
-				  <div class="face-choose left">◀</div>
+			<div class="icon delete js-delete-mood">
+				<i class="fas fa-trash-alt"></i>
 			</div>
-
+			<div class="profile-image">
+				<div class="left">◀</div>
+				<div class="right">▶</div>
+				<img data-imgId="1" src="img/dots/icons/face1.svg"/>
+			</div>
 			<div data-role="main">
-				<div class="edit-form"></div>
-				<div class="cta-button">
-					<a href="#" data-rel="back" class="js-edit-mood">Add Mood</a>
+				<div class="edit-form">
+					<div class="choose-bg"></div>
 				</div>
+				<div class="cta-button">Done</div>
 			</div>
 		</section>
 
@@ -347,11 +321,10 @@
 			<header data-role="header" class="ui-header ui-bar-inherit">
 				<h1>Choose Location</h1>
 				<ul>
-					<li class="flex-none">
-						<a href="#" data-rel="back">back</a>
+					<li class="flex-none back" style="padding: 0 20px;">
+						<b>back</b>
 					</li>
 					<li class="flex-stretch"></li>
-					<li class="flex-none"></li>
 				</ul>
 			</header>
 
@@ -367,21 +340,6 @@
 							placeholder="Say Something I'm giving up on you &#127925;"
 							data-role="none"
 						></textarea>
-
-						<!--
-									<label for="favorite">Favorite</label>
-									<input type="checkbox" name="favorite" id="list-add-favorite">
-
-										<label class="form-label" for="list-add-degree">Degree</label>
-										<select class="form-button" id="list-add-degree" data-role="none">
-											<option value="1">1</option>
-											<option value="2">2</option>
-											<option value="3">3</option>
-											<option value="4">4</option>
-											<option value="5">5</option>
-										</select>
-									-->
-
 						<div class="cta-button js-addlocation">
 							<a href="#">Make</a>
 						</div>
@@ -415,12 +373,9 @@
 			
 
 			<div data-role="main">
-				<div class="card">
-					<div class="profile-body"></div>
-
-					<div class="cta-button">
-						<a href="#" class="js-logout ui-link">Log Out</a>
-					</div>
+				<div class="card"></div>
+				<div class="cta-button">
+					<a href="#" class="js-logout ui-link">Log Out</a>
 				</div>
 			</div>
 
@@ -428,6 +383,20 @@
 				data-role="footer"
 				data-template="#footer-nav-template"
 			></footer>
+
+			<div class="bg-dots">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+	
 		</section>
 
 		<!-- Profile edit page -->
@@ -464,39 +433,43 @@
 					</form>
 
 					<div class="edit-form"></div>
-
-					<div class="cta-button">
-						<a href="#" data-rel="back" class="js-edit-user">Done</a>
-					</div>
 					
 				</div>
+				<div class="cta-wrap">
+					<div class="cta-button">
+						<a href="#" class="js-edit-user">Done</a>
+					</div>
+				</div>
+
 			</div>
+			<div class="bg-dots">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+
 		</section>
 
 		<script type="text/template" id="footer-nav-template">
 			<ul>
-				<li><a href="#home-page">
-					<div class="nav-icon">
-						<img src="img/dots/icons/icon-09.svg" alt="">
-				
-					</div>
-					
+				<li data-role="data-activateone"><a href="#list-page" >
+					<div class="nav-icon" class="list-nav"><img src="img/dots/icons/icon-08.svg" alt=""></div>
 				</a></li>
 
-				<li><a href="#list-page" >
-					<div class="nav-icon ">
-						<img src="img/dots/icons/icon-08.svg" alt="">
-	
-					</div>
-				
+				<li data-role="data-activateone"><a href="#home-page" class="active" >
+					<div class="nav-icon" class="home-nav"><img src="img/dots/icons/icon-09.svg" alt=""></div>
 				</a></li>
 
-				<li><a href="#profile-page" >
-					<div class="nav-icon ">
-						<img src="img/dots/icons/icon-07.svg" alt="">
+				<li data-role="data-activateone"><a href="#profile-page" >
+					<div class="nav-icon" class="profile-nav"><img src="img/dots/icons/icon-07.svg" alt=""></div>
 
-					</div>
-					
 				</a></li>
 			</ul>
 		</script>

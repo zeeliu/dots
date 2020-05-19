@@ -4,7 +4,7 @@
 const makeMoodList = templater(
 	(o) => `
 		<li class="mood-jump" data-id="${o.id}">
-			<img src="${o.img}" style="background-color: ${o.bgc}">
+			<img src="img/dots/icons/face${o.img}.svg" style="background-color: ${o.bgc}">
 		</li>
 	`
 );
@@ -13,7 +13,7 @@ const makeMoodList = templater(
 const makeChooseMoodList = templater(
 	(o) => `
 		<li><a href="#addlocation-page" class="mood-jump" data-id="${o.id}">
-			<img src="${o.img}" style="background-color: ${o.bgc}">
+			<img src="img/dots/icons/face${o.img}.svg" style="background-color: ${o.bgc}">
 		</a></li>
 	`
 );
@@ -21,17 +21,23 @@ const makeChooseMoodList = templater(
 
 const makeUserProfile = templater(
 	(o) => `
-		<div class="profile-head">
-			<div class="user-profile-image">
-				<div class="pic">
-					<img src="${o.img}" alt="">
-				</div>
+		<div class="user-profile-image">
+			<div class="pic">
+				${o.img ? `<img src="${o.img}" alt="">` : ''}
 			</div>
 		</div>
-		<h1>${o.name}</h1>
-		<P>${o.gender}</P>
-		<p>${o.city}</p>
-		<p>${o.bio}</p>
+		<div class="profile-name-gender">
+			<h1>${o.name || ''}</h1>
+			<image src="${o.gender == 'male' ? 'img/male.svg' : 'img/female.svg'}"/>
+		</div>
+		<div class="profile-city">
+			<p>${o.city || ''}</p>
+		</div>
+		<div class="bio">
+			<img src="img/bio-decor.png"/>
+			<p>${o.bio || ''}</p>
+			<img src="img/bio-decor.png"/>
+		</div>
 	`
 );
 
@@ -42,7 +48,7 @@ const makeUserProfile = templater(
 const makeMoodImage = templater(
 	(o) => `
 		<div class="profile-name"><h1>${o.name}</h1></div>
-		<img class="face" src="${o.img}" style="background-color: ${o.bgc}" alt="">
+		<img class="face" src="img/dots/icons/face${o.img}.svg" style="background-color: ${o.bgc}" alt="">
 		
 	`
 );
@@ -57,36 +63,33 @@ const makeMoodProfile = templater((o) => `
 const makeHomeWindow = templater(
 	(o) => `
 		<div class="recent-mood">
-			<div class="flex-none">
-				<div class="recent-image" style="background-color: ${o.bgc}">
-					<img src="${o.img}">
+			<div class="recent-image" style="background-color: ${o.bgc}">
+					<img src="img/dots/icons/face${o.img}.svg">
 					<div class="window-name">
 						<h2>${o.name}</h2>
 					</div>
-				</div>
 			</div>
-			<div class="flex-stretch">
-				
-				<div><strong>Description</strong> <span>${o.description}</span></div>
-			</div>
+			<p class="recent-description">
+				<b>Description</b>
+				<br/>
+				${o.description}
+			</p>
 		</div>
 	`
 );
 
 const makeEditUserForm = (o) => {
 	return `
-		<form>
+		<form id="edit-profile-form">
 			<div class="form-control">
 				<label for="name">Name</label>
 				<input type="text" placeholder="Name" id="edit-user-name" data-role="none" value="${o.name}">
 			</div>
 				
-			<div class="form-control">
-				<label for="gender">Gender</label>
-				<select class="form-button" id="edit-user-gender" data-role="none">
-					<option value="female">female</option>
-					<option value="male">male</option>
-				</select>
+			<label for="gender">Gender</label>
+			<div class="genders">
+				<div class="male ${o.gender == 'male' ? 'active' : ''}">M</div>
+				<div class="female ${o.gender == 'female' ? 'active' : ''}">F</div>
 			</div>
 
 			<div class="form-control">
