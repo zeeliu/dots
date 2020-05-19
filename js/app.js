@@ -153,7 +153,12 @@ $(() => {
 				throw "No id defined on this element";
 			}
 			sessionStorage.moodId = $(this).data("id");
-			$.mobile.navigate("#mood-page");
+			if (sessionStorage.clickType == "make-dot") {
+				sessionStorage.removeItem("clickType");
+				$.mobile.navigate("#addlocation-page");
+			} else {
+				$.mobile.navigate("#mood-page");
+			}
 		})
 
 		.on("click", "#moodedit-page .cta-button", function(e) {
@@ -233,6 +238,11 @@ $(() => {
 		// 		$.mobile.navigate("#home-page");
 		// 	});
 		// })
+
+		.on("click", "#home-page .cta-button", function (e) {
+			sessionStorage.clickType = "make-dot";
+			$.mobile.navigate("#list-page");
+		})
 
 		.on("click", ".js-edit-user", function (e) {
 			const gender = sessionStorage.gender;
